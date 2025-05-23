@@ -1,0 +1,28 @@
+name: Daily JSON Downloader
+
+on:
+  schedule:
+    - cron: '0 5 * * *'  # Runs every day at 5 AM UTC
+  workflow_dispatch:     # Manual trigger option
+
+jobs:
+  download-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Create data directory
+        run: mkdir -p data
+
+      - name: Download JSON
+        run: |
+          curl -sSL https://storage.googleapis.com/pota-activations0/pota_activations.json -o data/pota_activations.json
+
+      - name: Commit and Push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pota_activations.json
+          git commit -m "Daily JSON update: $(date -u)" || echo "No changes to commit"
+          git push
