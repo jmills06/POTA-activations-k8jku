@@ -1,0 +1,1542 @@
+[
+    {
+        "date": "2024-12-26",
+        "reference": "US-3324",
+        "park": "Proud Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 17,
+        "total": 17
+    },
+    {
+        "date": "2024-12-23",
+        "reference": "US-6705",
+        "park": "Holly Wildlife State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 11,
+        "total": 11
+    },
+    {
+        "date": "2024-12-23",
+        "reference": "US-6654",
+        "park": "Davisburg State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 14,
+        "total": 14
+    },
+    {
+        "date": "2024-12-23",
+        "reference": "US-3321",
+        "park": "Ortonville State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 20,
+        "total": 20
+    },
+    {
+        "date": "2024-12-23",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 10,
+        "total": 10
+    },
+    {
+        "date": "2024-12-23",
+        "reference": "US-1537",
+        "park": "Seven Lakes State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 11,
+        "total": 11
+    },
+    {
+        "date": "2024-12-19",
+        "reference": "US-1495",
+        "park": "Dodge #4 State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 33,
+        "total": 33
+    },
+    {
+        "date": "2024-12-17",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 38,
+        "total": 38
+    },
+    {
+        "date": "2024-12-04",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 28,
+        "total": 28
+    },
+    {
+        "date": "2024-12-03",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 1,
+        "phone": 71,
+        "total": 72
+    },
+    {
+        "date": "2024-11-29",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 111,
+        "total": 111
+    },
+    {
+        "date": "2024-11-19",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 11,
+        "phone": 14,
+        "total": 25
+    },
+    {
+        "date": "2024-11-18",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 86,
+        "total": 86
+    },
+    {
+        "date": "2024-11-17",
+        "reference": "US-3312",
+        "park": "Highland State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2024-11-16",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 3,
+        "phone": 25,
+        "total": 28
+    },
+    {
+        "date": "2024-11-11",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 15,
+        "total": 15
+    },
+    {
+        "date": "2024-11-09",
+        "reference": "US-3310",
+        "park": "Fort Custer State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 16,
+        "total": 16
+    },
+    {
+        "date": "2024-10-27",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 13,
+        "total": 13
+    },
+    {
+        "date": "2024-10-26",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 17,
+        "total": 17
+    },
+    {
+        "date": "2024-10-23",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 27,
+        "total": 27
+    },
+    {
+        "date": "2024-10-20",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 55,
+        "total": 55
+    },
+    {
+        "date": "2024-10-19",
+        "reference": "US-3322",
+        "park": "Pinckney State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 27,
+        "total": 27
+    },
+    {
+        "date": "2024-10-16",
+        "reference": "US-1518",
+        "park": "Maybury State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 28,
+        "total": 28
+    },
+    {
+        "date": "2024-10-05",
+        "reference": "US-3312",
+        "park": "Highland State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 39,
+        "total": 39
+    },
+    {
+        "date": "2024-09-23",
+        "reference": "US-4428",
+        "park": "Coconino National Forest",
+        "location": "US-AZ",
+        "cw": 0,
+        "data": 0,
+        "phone": 11,
+        "total": 11
+    },
+    {
+        "date": "2024-09-21",
+        "reference": "US-4432",
+        "park": "Tonto National Forest",
+        "location": "US-AZ",
+        "cw": 0,
+        "data": 17,
+        "phone": 21,
+        "total": 38
+    },
+    {
+        "date": "2024-09-21",
+        "reference": "US-1061",
+        "park": "Lost Dutchman State Park",
+        "location": "US-AZ",
+        "cw": 0,
+        "data": 0,
+        "phone": 20,
+        "total": 20
+    },
+    {
+        "date": "2024-09-15",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 140,
+        "total": 140
+    },
+    {
+        "date": "2024-09-15",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 45,
+        "total": 45
+    },
+    {
+        "date": "2024-09-07",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 47,
+        "total": 47
+    },
+    {
+        "date": "2024-09-02",
+        "reference": "US-1495",
+        "park": "Dodge #4 State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 13,
+        "total": 13
+    },
+    {
+        "date": "2024-08-25",
+        "reference": "US-1487",
+        "park": "Belle Isle State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 22,
+        "total": 22
+    },
+    {
+        "date": "2024-08-10",
+        "reference": "US-1523",
+        "park": "Mitchell State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 4,
+        "phone": 13,
+        "total": 17
+    },
+    {
+        "date": "2024-08-09",
+        "reference": "US-1557",
+        "park": "Wilson State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 15,
+        "total": 15
+    },
+    {
+        "date": "2024-08-04",
+        "reference": "US-3383",
+        "park": "Bald Mountain State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 15,
+        "phone": 17,
+        "total": 32
+    },
+    {
+        "date": "2024-08-02",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 13,
+        "total": 13
+    },
+    {
+        "date": "2024-08-01",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2024-07-28",
+        "reference": "US-3305",
+        "park": "Bay City State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 27,
+        "total": 27
+    },
+    {
+        "date": "2024-07-25",
+        "reference": "US-1523",
+        "park": "Mitchell State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 23,
+        "phone": 55,
+        "total": 78
+    },
+    {
+        "date": "2024-07-20",
+        "reference": "US-3312",
+        "park": "Highland State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 19,
+        "total": 19
+    },
+    {
+        "date": "2024-07-14",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 52,
+        "total": 52
+    },
+    {
+        "date": "2024-07-08",
+        "reference": "US-1210",
+        "park": "Boyd Lake State Park",
+        "location": "US-CO",
+        "cw": 0,
+        "data": 0,
+        "phone": 16,
+        "total": 16
+    },
+    {
+        "date": "2024-07-08",
+        "reference": "US-0059",
+        "park": "Rocky Mountain National Park",
+        "location": "US-CO",
+        "cw": 0,
+        "data": 0,
+        "phone": 45,
+        "total": 45
+    },
+    {
+        "date": "2024-07-04",
+        "reference": "US-1219",
+        "park": "Golden Gate Canyon State Park",
+        "location": "US-CO",
+        "cw": 0,
+        "data": 0,
+        "phone": 17,
+        "total": 17
+    },
+    {
+        "date": "2024-07-02",
+        "reference": "US-0225",
+        "park": "Rocky Flats National Wildlife Refuge",
+        "location": "US-CO",
+        "cw": 0,
+        "data": 0,
+        "phone": 36,
+        "total": 36
+    },
+    {
+        "date": "2024-06-30",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 7,
+        "phone": 16,
+        "total": 23
+    },
+    {
+        "date": "2024-06-23",
+        "reference": "US-3384",
+        "park": "Brighton State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 21,
+        "phone": 7,
+        "total": 28
+    },
+    {
+        "date": "2024-06-22",
+        "reference": "US-3384",
+        "park": "Brighton State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 3,
+        "phone": 78,
+        "total": 81
+    },
+    {
+        "date": "2024-06-20",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 108,
+        "total": 108
+    },
+    {
+        "date": "2024-06-14",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 61,
+        "total": 61
+    },
+    {
+        "date": "2024-06-08",
+        "reference": "US-1540",
+        "park": "Sleepy Hollow State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 10,
+        "phone": 2,
+        "total": 12
+    },
+    {
+        "date": "2024-06-07",
+        "reference": "US-1540",
+        "park": "Sleepy Hollow State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 10,
+        "phone": 0,
+        "total": 10
+    },
+    {
+        "date": "2024-05-19",
+        "reference": "US-7850",
+        "park": "Caesar Creek Lake State Wildlife Area",
+        "location": "US-OH",
+        "cw": 0,
+        "data": 0,
+        "phone": 16,
+        "total": 16
+    },
+    {
+        "date": "2024-05-19",
+        "reference": "US-7849",
+        "park": "Spring Valley State Wildlife Area",
+        "location": "US-OH",
+        "cw": 0,
+        "data": 0,
+        "phone": 16,
+        "total": 16
+    },
+    {
+        "date": "2024-05-19",
+        "reference": "US-4239",
+        "park": "North Country Trail National Scenic Trail",
+        "location": "US-OH",
+        "cw": 0,
+        "data": 0,
+        "phone": 16,
+        "total": 16
+    },
+    {
+        "date": "2024-05-19",
+        "reference": "US-1998",
+        "park": "Van Buren State Park",
+        "location": "US-OH",
+        "cw": 0,
+        "data": 0,
+        "phone": 16,
+        "total": 16
+    },
+    {
+        "date": "2024-05-19",
+        "reference": "US-1940",
+        "park": "Caesar Creek State Park",
+        "location": "US-OH",
+        "cw": 0,
+        "data": 0,
+        "phone": 16,
+        "total": 16
+    },
+    {
+        "date": "2024-05-19",
+        "reference": "US-0732",
+        "park": "Dayton Aviation Heritage National Historical Park",
+        "location": "US-OH",
+        "cw": 0,
+        "data": 0,
+        "phone": 16,
+        "total": 16
+    },
+    {
+        "date": "2024-05-18",
+        "reference": "US-7847",
+        "park": "Caesar Creek Gorge State Nature Preserve",
+        "location": "US-OH",
+        "cw": 0,
+        "data": 0,
+        "phone": 16,
+        "total": 16
+    },
+    {
+        "date": "2024-05-18",
+        "reference": "US-1972",
+        "park": "Little Miami State Park",
+        "location": "US-OH",
+        "cw": 0,
+        "data": 0,
+        "phone": 16,
+        "total": 16
+    },
+    {
+        "date": "2024-05-18",
+        "reference": "US-1940",
+        "park": "Caesar Creek State Park",
+        "location": "US-OH",
+        "cw": 0,
+        "data": 0,
+        "phone": 33,
+        "total": 33
+    },
+    {
+        "date": "2024-05-08",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 33,
+        "total": 33
+    },
+    {
+        "date": "2024-04-20",
+        "reference": "US-3315",
+        "park": "Island Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 25,
+        "total": 25
+    },
+    {
+        "date": "2024-04-13",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 45,
+        "total": 45
+    },
+    {
+        "date": "2024-04-08",
+        "reference": "US-1976",
+        "park": "Maumee Bay State Park",
+        "location": "US-OH",
+        "cw": 0,
+        "data": 17,
+        "phone": 16,
+        "total": 33
+    },
+    {
+        "date": "2024-03-17",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 17,
+        "phone": 1,
+        "total": 18
+    },
+    {
+        "date": "2024-03-12",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 135,
+        "total": 135
+    },
+    {
+        "date": "2024-03-11",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 42,
+        "total": 42
+    },
+    {
+        "date": "2024-03-07",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 76,
+        "total": 76
+    },
+    {
+        "date": "2024-03-03",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 13,
+        "phone": 45,
+        "total": 58
+    },
+    {
+        "date": "2024-03-02",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 8,
+        "phone": 18,
+        "total": 26
+    },
+    {
+        "date": "2024-03-01",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 20,
+        "total": 20
+    },
+    {
+        "date": "2024-02-27",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 37,
+        "total": 37
+    },
+    {
+        "date": "2024-02-25",
+        "reference": "US-3384",
+        "park": "Brighton State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 26,
+        "total": 26
+    },
+    {
+        "date": "2024-02-17",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 24,
+        "total": 24
+    },
+    {
+        "date": "2024-02-17",
+        "reference": "US-1537",
+        "park": "Seven Lakes State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 24,
+        "total": 24
+    },
+    {
+        "date": "2024-02-11",
+        "reference": "US-1537",
+        "park": "Seven Lakes State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 48,
+        "total": 48
+    },
+    {
+        "date": "2024-02-09",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 18,
+        "total": 18
+    },
+    {
+        "date": "2024-02-04",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 33,
+        "total": 33
+    },
+    {
+        "date": "2024-01-21",
+        "reference": "US-3384",
+        "park": "Brighton State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 26,
+        "phone": 59,
+        "total": 85
+    },
+    {
+        "date": "2024-01-20",
+        "reference": "US-3384",
+        "park": "Brighton State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 50,
+        "phone": 89,
+        "total": 139
+    },
+    {
+        "date": "2024-01-19",
+        "reference": "US-3384",
+        "park": "Brighton State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 30,
+        "total": 30
+    },
+    {
+        "date": "2024-01-02",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 16,
+        "total": 16
+    },
+    {
+        "date": "2024-01-01",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 25,
+        "total": 25
+    },
+    {
+        "date": "2023-12-30",
+        "reference": "US-3322",
+        "park": "Pinckney State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 31,
+        "total": 31
+    },
+    {
+        "date": "2023-12-29",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 19,
+        "phone": 11,
+        "total": 30
+    },
+    {
+        "date": "2023-12-28",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 32,
+        "total": 32
+    },
+    {
+        "date": "2023-12-26",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 16,
+        "total": 16
+    },
+    {
+        "date": "2023-12-26",
+        "reference": "US-1518",
+        "park": "Maybury State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 17,
+        "total": 17
+    },
+    {
+        "date": "2023-12-24",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 24,
+        "total": 24
+    },
+    {
+        "date": "2023-12-23",
+        "reference": "US-1537",
+        "park": "Seven Lakes State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 31,
+        "total": 31
+    },
+    {
+        "date": "2023-12-21",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 46,
+        "total": 46
+    },
+    {
+        "date": "2023-12-19",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 73,
+        "total": 73
+    },
+    {
+        "date": "2023-12-16",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 11,
+        "total": 11
+    },
+    {
+        "date": "2023-12-15",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 27,
+        "total": 27
+    },
+    {
+        "date": "2023-11-19",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 17,
+        "total": 17
+    },
+    {
+        "date": "2023-11-18",
+        "reference": "US-1540",
+        "park": "Sleepy Hollow State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 25,
+        "total": 25
+    },
+    {
+        "date": "2023-11-17",
+        "reference": "US-1495",
+        "park": "Dodge #4 State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 5,
+        "total": 5
+    },
+    {
+        "date": "2023-11-12",
+        "reference": "US-1518",
+        "park": "Maybury State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 28,
+        "total": 28
+    },
+    {
+        "date": "2023-11-11",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2023-11-04",
+        "reference": "US-3383",
+        "park": "Bald Mountain State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 39,
+        "total": 39
+    },
+    {
+        "date": "2023-10-24",
+        "reference": "US-3322",
+        "park": "Pinckney State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 45,
+        "total": 45
+    },
+    {
+        "date": "2023-10-22",
+        "reference": "US-3312",
+        "park": "Highland State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 9,
+        "phone": 48,
+        "total": 57
+    },
+    {
+        "date": "2023-10-15",
+        "reference": "US-3384",
+        "park": "Brighton State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 55,
+        "total": 55
+    },
+    {
+        "date": "2023-10-12",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 45,
+        "total": 45
+    },
+    {
+        "date": "2023-10-07",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 10,
+        "total": 10
+    },
+    {
+        "date": "2023-10-01",
+        "reference": "US-3384",
+        "park": "Brighton State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 25,
+        "total": 25
+    },
+    {
+        "date": "2023-09-24",
+        "reference": "US-3315",
+        "park": "Island Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 16,
+        "phone": 0,
+        "total": 16
+    },
+    {
+        "date": "2023-09-23",
+        "reference": "US-3315",
+        "park": "Island Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 37,
+        "phone": 42,
+        "total": 79
+    },
+    {
+        "date": "2023-09-22",
+        "reference": "US-3315",
+        "park": "Island Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 24,
+        "total": 24
+    },
+    {
+        "date": "2023-09-19",
+        "reference": "US-1518",
+        "park": "Maybury State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 9,
+        "phone": 2,
+        "total": 11
+    },
+    {
+        "date": "2023-09-17",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2023-09-16",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 11,
+        "phone": 10,
+        "total": 21
+    },
+    {
+        "date": "2023-09-04",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 7,
+        "phone": 37,
+        "total": 44
+    },
+    {
+        "date": "2023-08-26",
+        "reference": "US-3315",
+        "park": "Island Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 3,
+        "phone": 16,
+        "total": 19
+    },
+    {
+        "date": "2023-08-20",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 13,
+        "phone": 0,
+        "total": 13
+    },
+    {
+        "date": "2023-08-19",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2023-08-13",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 15,
+        "total": 15
+    },
+    {
+        "date": "2023-08-05",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2023-08-04",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 11,
+        "total": 11
+    },
+    {
+        "date": "2023-07-22",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 27,
+        "total": 27
+    },
+    {
+        "date": "2023-07-20",
+        "reference": "US-1523",
+        "park": "Mitchell State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 3,
+        "total": 3
+    },
+    {
+        "date": "2023-07-15",
+        "reference": "US-3315",
+        "park": "Island Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 23,
+        "total": 23
+    },
+    {
+        "date": "2023-07-03",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 5,
+        "phone": 9,
+        "total": 14
+    },
+    {
+        "date": "2023-07-02",
+        "reference": "US-3312",
+        "park": "Highland State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 6,
+        "phone": 25,
+        "total": 31
+    },
+    {
+        "date": "2023-06-24",
+        "reference": "US-3384",
+        "park": "Brighton State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 13,
+        "phone": 29,
+        "total": 42
+    },
+    {
+        "date": "2024-12-31",
+        "reference": "US-6706",
+        "park": "Horseshoe Lake State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 4,
+        "phone": 28,
+        "total": 32
+    },
+    {
+        "date": "2025-01-03",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-01-19",
+        "reference": "US-3384",
+        "park": "Brighton State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 42,
+        "phone": 95,
+        "total": 137
+    },
+    {
+        "date": "2025-01-18",
+        "reference": "US-3384",
+        "park": "Brighton State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 37,
+        "phone": 92,
+        "total": 129
+    },
+    {
+        "date": "2025-01-17",
+        "reference": "US-3384",
+        "park": "Brighton State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 48,
+        "total": 48
+    },
+    {
+        "date": "2025-01-23",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 64,
+        "total": 64
+    },
+    {
+        "date": "2025-01-30",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 11,
+        "phone": 14,
+        "total": 25
+    },
+    {
+        "date": "2025-02-15",
+        "reference": "US-3312",
+        "park": "Highland State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 12,
+        "phone": 20,
+        "total": 32
+    },
+    {
+        "date": "2025-01-30",
+        "reference": "US-3312",
+        "park": "Highland State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 11,
+        "phone": 0,
+        "total": 11
+    },
+    {
+        "date": "2025-02-18",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 9,
+        "phone": 17,
+        "total": 26
+    },
+    {
+        "date": "2025-03-03",
+        "reference": "US-3312",
+        "park": "Highland State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 19,
+        "total": 19
+    },
+    {
+        "date": "2025-03-08",
+        "reference": "US-3312",
+        "park": "Highland State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 15,
+        "total": 15
+    },
+    {
+        "date": "2025-03-15",
+        "reference": "US-3324",
+        "park": "Proud Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 30,
+        "total": 30
+    },
+    {
+        "date": "2025-03-16",
+        "reference": "US-0714",
+        "park": "River Raisin National Battlefield",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 11,
+        "total": 11
+    },
+    {
+        "date": "2025-03-16",
+        "reference": "US-1542",
+        "park": "Sterling State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 11,
+        "total": 11
+    },
+    {
+        "date": "2025-03-16",
+        "reference": "US-3514",
+        "park": "Fort Miamis Fallen Timbers Battlefield National Historic Site",
+        "location": "US-OH",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-04-05",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 10,
+        "total": 10
+    },
+    {
+        "date": "2025-04-09",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 10,
+        "total": 10
+    },
+    {
+        "date": "2025-04-20",
+        "reference": "US-3312",
+        "park": "Highland State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 14,
+        "total": 14
+    },
+    {
+        "date": "2025-04-26",
+        "reference": "US-3333",
+        "park": "Wetzel State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 11,
+        "total": 11
+    },
+    {
+        "date": "2025-05-14",
+        "reference": "US-10231",
+        "park": "Limberlost Swamp State Nature Preserve",
+        "location": "US-IN",
+        "cw": 0,
+        "data": 0,
+        "phone": 19,
+        "total": 19
+    },
+    {
+        "date": "2025-05-14",
+        "reference": "US-7713",
+        "park": "Loblolly Marsh State Nature Preserve",
+        "location": "US-IN",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-05-14",
+        "reference": "US-10232",
+        "park": "White Oak Cemetery State Nature Preserve",
+        "location": "US-IN",
+        "cw": 0,
+        "data": 0,
+        "phone": 16,
+        "total": 16
+    },
+    {
+        "date": "2025-05-18",
+        "reference": "US-1940",
+        "park": "Caesar Creek State Park",
+        "location": "US-OH",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-05-15",
+        "reference": "US-9402",
+        "park": "Culberson Woods State Nature Preserve",
+        "location": "US-OH",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-05-15",
+        "reference": "US-9411",
+        "park": "Halls Creek Woods State Nature Preserve",
+        "location": "US-OH",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-05-15",
+        "reference": "US-1943",
+        "park": "Cowan Lake State Park",
+        "location": "US-OH",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-05-15",
+        "reference": "US-3779",
+        "park": "Big Bone Lick State Historic Site",
+        "location": "US-KY",
+        "cw": 0,
+        "data": 0,
+        "phone": 18,
+        "total": 18
+    }
+]
