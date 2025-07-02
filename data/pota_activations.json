@@ -1568,5 +1568,15 @@
         "data": 0,
         "phone": 20,
         "total": 20
+    },
+    {
+        "date": "2025-06-28",
+        "reference": "US-3384",
+        "park": "Brighton State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 40,
+        "total": 40
     }
 ]
