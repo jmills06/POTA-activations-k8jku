@@ -1608,5 +1608,25 @@
         "data": 0,
         "phone": 54,
         "total": 54
+    },
+    {
+        "date": "2025-07-17",
+        "reference": "US-1387",
+        "park": "Moraine State Park",
+        "location": "US-PA",
+        "cw": 0,
+        "data": 0,
+        "phone": 11,
+        "total": 11
+    },
+    {
+        "date": "2025-07-17",
+        "reference": "US-4239",
+        "park": "North Country Trail National Scenic Trail",
+        "location": "US-PA",
+        "cw": 0,
+        "data": 0,
+        "phone": 11,
+        "total": 11
     }
 ]
