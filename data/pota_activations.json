@@ -1688,5 +1688,75 @@
         "data": 0,
         "phone": 32,
         "total": 32
+    },
+    {
+        "date": "2025-08-08",
+        "reference": "US-10088",
+        "park": "Headquarters Lake Flooding State Wildlife Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 10,
+        "phone": 14,
+        "total": 24
+    },
+    {
+        "date": "2025-08-08",
+        "reference": "US-4774",
+        "park": "Au Sable State Forest",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 19,
+        "total": 19
+    },
+    {
+        "date": "2025-08-08",
+        "reference": "US-4779",
+        "park": "Pere Marquette State Forest",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 10,
+        "phone": 14,
+        "total": 24
+    },
+    {
+        "date": "2025-08-08",
+        "reference": "US-1503",
+        "park": "Hartwick Pines State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 11,
+        "total": 11
+    },
+    {
+        "date": "2025-08-08",
+        "reference": "US-6717",
+        "park": "Lame Duck Area State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 19,
+        "total": 19
+    },
+    {
+        "date": "2025-08-08",
+        "reference": "US-6737",
+        "park": "Molasses River Flooding No 1 Wildlife Management Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 10,
+        "total": 10
+    },
+    {
+        "date": "2025-08-08",
+        "reference": "US-7854",
+        "park": "Molasses River Flooding No 2 Wildlife Management Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 10,
+        "total": 10
     }
 ]
