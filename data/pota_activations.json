@@ -1808,5 +1808,25 @@
         "data": 0,
         "phone": 26,
         "total": 26
+    },
+    {
+        "date": "2025-10-10",
+        "reference": "US-7867",
+        "park": "Benedictine Bottoms State Wildlife Area",
+        "location": "US-KS",
+        "cw": 0,
+        "data": 0,
+        "phone": 13,
+        "total": 13
+    },
+    {
+        "date": "2025-10-10",
+        "reference": "US-1770",
+        "park": "Lewis and Clark State Park",
+        "location": "US-MO",
+        "cw": 0,
+        "data": 0,
+        "phone": 34,
+        "total": 34
     }
 ]
