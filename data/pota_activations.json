@@ -1838,5 +1838,15 @@
         "data": 0,
         "phone": 33,
         "total": 33
+    },
+    {
+        "date": "2025-10-18",
+        "reference": "US-1487",
+        "park": "Belle Isle State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 15,
+        "total": 15
     }
 ]
