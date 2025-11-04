@@ -1848,5 +1848,15 @@
         "data": 0,
         "phone": 15,
         "total": 15
+    },
+    {
+        "date": "2025-11-02",
+        "reference": "US-3312",
+        "park": "Highland State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 32,
+        "total": 32
     }
 ]
