@@ -1868,5 +1868,15 @@
         "data": 0,
         "phone": 38,
         "total": 38
+    },
+    {
+        "date": "2025-11-09",
+        "reference": "US-1518",
+        "park": "Maybury State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 21,
+        "total": 21
     }
 ]
