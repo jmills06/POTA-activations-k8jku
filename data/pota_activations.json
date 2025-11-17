@@ -1888,5 +1888,55 @@
         "data": 6,
         "phone": 29,
         "total": 35
+    },
+    {
+        "date": "2025-11-16",
+        "reference": "CA-4865",
+        "park": "Fort Malden National Historic Site",
+        "location": "CA-ON",
+        "cw": 0,
+        "data": 0,
+        "phone": 11,
+        "total": 11
+    },
+    {
+        "date": "2025-11-16",
+        "reference": "CA-5290",
+        "park": "Amherstburg First Baptist Church National Historic Site",
+        "location": "CA-ON",
+        "cw": 0,
+        "data": 0,
+        "phone": 10,
+        "total": 10
+    },
+    {
+        "date": "2025-11-16",
+        "reference": "CA-5308",
+        "park": "Hough House National Historic Site",
+        "location": "CA-ON",
+        "cw": 0,
+        "data": 0,
+        "phone": 11,
+        "total": 11
+    },
+    {
+        "date": "2025-11-16",
+        "reference": "CA-5947",
+        "park": "Devonwood Conservation Area",
+        "location": "CA-ON",
+        "cw": 0,
+        "data": 8,
+        "phone": 4,
+        "total": 12
+    },
+    {
+        "date": "2025-11-16",
+        "reference": "CA-5669",
+        "park": "Holiday Beach Conservation Area",
+        "location": "CA-ON",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
     }
 ]
