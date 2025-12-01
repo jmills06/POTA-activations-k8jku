@@ -1948,5 +1948,15 @@
         "data": 0,
         "phone": 20,
         "total": 20
+    },
+    {
+        "date": "2025-11-30",
+        "reference": "US-3320",
+        "park": "Metamora-Hadley State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 35,
+        "total": 35
     }
 ]
