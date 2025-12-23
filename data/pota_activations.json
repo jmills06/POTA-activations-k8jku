@@ -1958,5 +1958,15 @@
         "data": 0,
         "phone": 35,
         "total": 35
+    },
+    {
+        "date": "2025-12-22",
+        "reference": "US-1495",
+        "park": "Dodge #4 State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 16,
+        "total": 16
     }
 ]
