@@ -1968,5 +1968,255 @@
         "data": 0,
         "phone": 16,
         "total": 16
+    },
+    {
+        "date": "2025-12-31",
+        "reference": "US-6658",
+        "park": "Denmark Township State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-31",
+        "reference": "US-6645",
+        "park": "Clark Lake State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-6819",
+        "park": "Port Austin State Harbor",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-6668",
+        "park": "Elmwood Township State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-6672",
+        "park": "Fish Point State Wildlife Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-6651",
+        "park": "Crow Island State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-6657",
+        "park": "Deford State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-6646",
+        "park": "Columbia Township State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-6641",
+        "park": "Cass City State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-6635",
+        "park": "Brookfield Township  II State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-6634",
+        "park": "Brookfield Township State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-6616",
+        "park": "Almer Township State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-1535",
+        "park": "Port Crescent State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-1539",
+        "park": "Sleeper State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-6680",
+        "park": "Gagetown State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-3327",
+        "park": "Sanilac Petroglyphs State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-6807",
+        "park": "Wildfowl Bay State Wildlife Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-6799",
+        "park": "Tuscola State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-6772",
+        "park": "Rush Lake State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-6777",
+        "park": "Sanilac State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-6802",
+        "park": "Verona State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-6801",
+        "park": "Vassar State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-6766",
+        "park": "Quanicassee State Wildlife Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-6749",
+        "park": "Oliver Township State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2025-12-30",
+        "reference": "US-6736",
+        "park": "Minden City State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
     }
 ]
