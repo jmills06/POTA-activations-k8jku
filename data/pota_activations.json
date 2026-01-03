@@ -2218,5 +2218,15 @@
         "data": 0,
         "phone": 12,
         "total": 12
+    },
+    {
+        "date": "2026-01-02",
+        "reference": "US-3323",
+        "park": "Pontiac Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 9,
+        "phone": 17,
+        "total": 26
     }
 ]
