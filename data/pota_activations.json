@@ -2248,5 +2248,15 @@
         "data": 10,
         "phone": 60,
         "total": 70
+    },
+    {
+        "date": "2026-01-25",
+        "reference": "US-3315",
+        "park": "Island Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 116,
+        "total": 116
     }
 ]
