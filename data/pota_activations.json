@@ -2338,5 +2338,15 @@
         "data": 0,
         "phone": 32,
         "total": 32
+    },
+    {
+        "date": "2026-03-29",
+        "reference": "US-6412",
+        "park": "Aiea Bay State Recreation Area",
+        "location": "US-HI",
+        "cw": 0,
+        "data": 9,
+        "phone": 2,
+        "total": 11
     }
 ]
