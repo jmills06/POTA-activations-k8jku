@@ -2348,5 +2348,15 @@
         "data": 9,
         "phone": 2,
         "total": 11
+    },
+    {
+        "date": "2026-03-31",
+        "reference": "US-6417",
+        "park": "Wahiawa Freshwater State Recreation Area",
+        "location": "US-HI",
+        "cw": 0,
+        "data": 22,
+        "phone": 6,
+        "total": 28
     }
 ]
