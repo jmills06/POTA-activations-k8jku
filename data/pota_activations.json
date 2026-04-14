@@ -2358,5 +2358,15 @@
         "data": 22,
         "phone": 6,
         "total": 28
+    },
+    {
+        "date": "2026-04-12",
+        "reference": "US-0030",
+        "park": "Grand Canyon National Park",
+        "location": "US-AZ",
+        "cw": 0,
+        "data": 0,
+        "phone": 20,
+        "total": 20
     }
 ]
