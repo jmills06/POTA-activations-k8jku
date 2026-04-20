@@ -2368,5 +2368,25 @@
         "data": 0,
         "phone": 20,
         "total": 20
+    },
+    {
+        "date": "2026-04-19",
+        "reference": "US-6636",
+        "park": "Brownstown Prairie State Wildlife Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 12,
+        "phone": 0,
+        "total": 12
+    },
+    {
+        "date": "2026-04-19",
+        "reference": "US-10063",
+        "park": "Crystal Waters State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 13,
+        "phone": 0,
+        "total": 13
     }
 ]
