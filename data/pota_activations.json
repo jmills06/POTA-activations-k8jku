@@ -2438,5 +2438,45 @@
         "data": 0,
         "phone": 27,
         "total": 27
+    },
+    {
+        "date": "2026-07-18",
+        "reference": "US-6726",
+        "park": "Malan Waterfowl National Wildlife Management Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 17,
+        "phone": 18,
+        "total": 35
+    },
+    {
+        "date": "2026-07-18",
+        "reference": "US-3331",
+        "park": "Waterloo State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 17,
+        "phone": 24,
+        "total": 41
+    },
+    {
+        "date": "2026-07-18",
+        "reference": "US-6804",
+        "park": "Waterloo Unit State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 17,
+        "phone": 18,
+        "total": 35
+    },
+    {
+        "date": "2026-07-18",
+        "reference": "US-0350",
+        "park": "Michigan Wetland Management District",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 17,
+        "phone": 18,
+        "total": 35
     }
 ]
