@@ -2478,5 +2478,25 @@
         "data": 17,
         "phone": 18,
         "total": 35
+    },
+    {
+        "date": "2026-07-19",
+        "reference": "US-3383",
+        "park": "Bald Mountain State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 11,
+        "total": 11
+    },
+    {
+        "date": "2026-07-19",
+        "reference": "US-13182",
+        "park": "Polly Ann State Trail",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 11,
+        "total": 11
     }
 ]
