@@ -2508,5 +2508,45 @@
         "data": 0,
         "phone": 26,
         "total": 26
+    },
+    {
+        "date": "2026-07-24",
+        "reference": "US-4583",
+        "park": "Manistee National Forest",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 22,
+        "total": 22
+    },
+    {
+        "date": "2026-07-24",
+        "reference": "US-12795",
+        "park": "Pere Marquette National Wild and Scenic River",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 22,
+        "total": 22
+    },
+    {
+        "date": "2026-07-23",
+        "reference": "US-13179",
+        "park": "Pere Marquette State Trail",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 15,
+        "phone": 0,
+        "total": 15
+    },
+    {
+        "date": "2026-07-23",
+        "reference": "US-1555",
+        "park": "White Pine Trail State Park",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 15,
+        "phone": 0,
+        "total": 15
     }
 ]
