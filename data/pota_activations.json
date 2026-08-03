@@ -2608,5 +2608,15 @@
         "data": 0,
         "phone": 36,
         "total": 36
+    },
+    {
+        "date": "2026-08-02",
+        "reference": "US-3324",
+        "park": "Proud Lake State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 2,
+        "phone": 38,
+        "total": 40
     }
 ]
