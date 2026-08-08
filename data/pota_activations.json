@@ -2618,5 +2618,65 @@
         "data": 2,
         "phone": 38,
         "total": 40
+    },
+    {
+        "date": "2026-08-07",
+        "reference": "US-6742",
+        "park": "Muskrat Lake State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 11,
+        "total": 11
+    },
+    {
+        "date": "2026-08-07",
+        "reference": "US-6694",
+        "park": "Gratiot-Saginaw State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 11,
+        "total": 11
+    },
+    {
+        "date": "2026-08-07",
+        "reference": "US-6730",
+        "park": "Maple River State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 12,
+        "total": 12
+    },
+    {
+        "date": "2026-08-07",
+        "reference": "US-6729",
+        "park": "Gratiot-Saginaw Connector State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 14,
+        "total": 14
+    },
+    {
+        "date": "2026-08-07",
+        "reference": "US-6771",
+        "park": "Rose Lake State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 13,
+        "total": 13
+    },
+    {
+        "date": "2026-08-07",
+        "reference": "US-6731",
+        "park": "Mark Knee Memorial State Game Land",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 14,
+        "total": 14
     }
 ]
