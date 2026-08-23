@@ -2678,5 +2678,15 @@
         "data": 0,
         "phone": 14,
         "total": 14
+    },
+    {
+        "date": "2026-08-23",
+        "reference": "US-1976",
+        "park": "Maumee Bay State Park",
+        "location": "US-OH",
+        "cw": 0,
+        "data": 31,
+        "phone": 10,
+        "total": 41
     }
 ]
