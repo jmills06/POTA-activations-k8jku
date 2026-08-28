@@ -4,7 +4,7 @@ A 1080x1920 portrait dashboard showing K8JKU's Parks on the Air activations
 across Michigan. Built for a Dakboard screen, but it is just a static page --
 open the URL in any browser.
 
-**Live URL:** https://jmills06.github.io/pota-activations-k8jku/
+**Live URL:** https://jmills06.github.io/POTA-activations-k8jku/
 
 ## Layout
 
