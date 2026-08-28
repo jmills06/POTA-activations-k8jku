@@ -5,24 +5,34 @@ on:
     - cron: '0 5 * * *'  # Runs every day at 5 AM UTC
   workflow_dispatch:     # Manual trigger option
 
+permissions:
+  contents: write
+
 jobs:
   download-json:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Create data directory
-        run: mkdir -p data
+        uses: actions/checkout@v4
 
       - name: Download JSON
         run: |
-          curl -sSL https://storage.googleapis.com/pota-activations0/pota_activations.json -o data/pota_activations.json
+          mkdir -p data
+          # Download to a temp file and only replace the committed copy once
+          # it parses as JSON, so a bucket error page can never overwrite
+          # good data that the dashboard is serving.
+          for name in pota_activations Michigan_POTA_Parks; do
+            curl -sSL --fail --retry 3 --retry-delay 5 \
+              "https://storage.googleapis.com/pota-activations0/${name}.json" \
+              -o "/tmp/${name}.json"
+            python3 -c "import json,sys; json.load(open('/tmp/${name}.json'))"
+            mv "/tmp/${name}.json" "data/${name}.json"
+          done
 
       - name: Commit and Push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/pota_activations.json
+          git add data/pota_activations.json data/Michigan_POTA_Parks.json
           git commit -m "Daily JSON update: $(date -u)" || echo "No changes to commit"
           git push
