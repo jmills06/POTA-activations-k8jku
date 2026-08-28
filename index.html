@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K8JKU Michigan POTA Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a3a1a 0%, #0d1f0d 100%);
+            color: #ffffff;
+            font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+            width: 1080px;
+            height: 1920px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ============ Shared POTA Header ============ */
+        .header {
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .callsign {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #FF9800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .pota-badge {
+            background: #43A047;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .header-title {
+            text-align: right;
+        }
+
+        .header-title h1 {
+            color: #FF9800;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 2px;
+            letter-spacing: 1px;
+        }
+
+        .header-title .subtitle {
+            color: #8BC34A;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        /* ============ Map Panel ============ */
+        .map-container {
+            position: relative; /* anchors the legend overlay */
+            margin: 0 15px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border: 3px solid #FF9800;
+            height: 950px;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background: #eef3f7; /* shows through before tiles paint */
+        }
+
+        .leaflet-control-attribution,
+        .leaflet-control-zoom {
+            display: none !important;
+        }
+
+        /* ============ Shared Legend ============ */
+        .legend {
+            display: flex;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px 18px;
+            border-radius: 10px;
+            border: 2px solid #2e7d32;
+        }
+
+        .map-legend {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #2e7d32;
+            font-weight: 600;
+        }
+
+        .legend-box {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            border: 2px solid #2e7d32;
+        }
+
+        .legend-box.new {
+            background-color: #2196F3;
+            border-color: #1565C0;
+        }
+
+        .legend-box.fresh {
+            background-color: #FF9800;
+            border-color: #E65100;
+        }
+
+        .legend-box.activated {
+            background-color: #ff4444;
+            border-color: #cc0000;
+        }
+
+        .legend-box.available {
+            background-color: #FFD700;
+            border-color: #B8860B;
+        }
+
+        /* Pulsing animation for fresh markers.
+           Animates transform + opacity only (GPU friendly);
+           the glow shadow is static. */
+        .fresh-marker {
+            box-shadow: 0 0 12px rgba(255, 152, 0, 0.8);
+            animation: pulse-marker 1.5s ease-in-out infinite;
+        }
+
+        /* NEW park marker: first-ever activation within the fresh window.
+           Blue circle with a white star, slightly stronger pulse than fresh.
+           Kept at 18px because Michigan parks cluster tightly. */
+        .new-marker {
+            width: 18px;
+            height: 18px;
+            background: #2196F3;
+            border-radius: 50%;
+            border: 2px solid #1565C0;
+            box-shadow: 0 0 12px rgba(33, 150, 243, 0.9);
+            color: #ffffff;
+            font-size: 10px;
+            line-height: 14px;
+            text-align: center;
+            font-weight: 700;
+            animation: pulse-marker-new 1.2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-marker {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.15);
+                opacity: 0.85;
+            }
+        }
+
+        @keyframes pulse-marker-new {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.25);
+                opacity: 0.85;
+            }
+        }
+
+        /* ============ Info Section ============ */
+        .info-section {
+            flex: 1;
+            min-height: 0;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .info-panel {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border: 3px solid #FF9800;
+        }
+
+        .info-panel h2 {
+            color: #FF9800;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #FF9800;
+            padding-bottom: 8px;
+        }
+
+        /* ============ Stats ============ */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 12px;
+            background: #e8f5e9;
+            border-radius: 8px;
+            border-left: 4px solid #43A047;
+        }
+
+        .stat-item.fresh-stat {
+            background: #fff3e0;
+            border-left-color: #FF9800;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #2e7d32;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .stat-item.fresh-stat .stat-label {
+            color: #E65100;
+        }
+
+        .stat-value {
+            font-size: 2.2rem;
+            color: #1b5e20;
+            font-weight: 700;
+        }
+
+        .stat-item.fresh-stat .stat-value {
+            color: #FF9800;
+        }
+
+        /* ============ Progress ============ */
+        .progress-section {
+            margin-top: 15px;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .progress-title {
+            color: #2e7d32;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .progress-percent {
+            color: #1b5e20;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background: #e8f5e9;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #43A047;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #43A047 0%, #66BB6A 100%);
+            border-radius: 8px;
+            transition: width 1s ease-out;
+        }
+
+        .progress-detail {
+            color: #2e7d32;
+            font-size: 0.85rem;
+            text-align: center;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        /* ============ Recent Activations ============ */
+        .recent-panel {
+            flex: 1;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .recent-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            overflow: hidden;
+        }
+
+        .recent-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #e8f5e9;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid #43A047;
+        }
+
+        .recent-item.fresh {
+            border-left-color: #FF9800;
+            background: #fff3e0;
+        }
+
+        .recent-item.new {
+            border-left-color: #2196F3;
+            background: #e3f2fd;
+        }
+
+        .recent-park {
+            color: #1b5e20;
+            font-size: 0.9rem;
+            font-weight: 600;
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-right: 10px;
+        }
+
+        .recent-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .recent-qsos {
+            color: #43A047;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .recent-item.fresh .recent-qsos {
+            color: #FF9800;
+        }
+
+        .recent-item.new .recent-qsos {
+            color: #2196F3;
+        }
+
+        .recent-date {
+            color: #666;
+            font-size: 0.8rem;
+            min-width: 55px;
+            text-align: right;
+        }
+
+        .fresh-badge {
+            background: #FF9800;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 700;
+        }
+
+        .new-badge {
+            background: #2196F3;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 700;
+        }
+
+        /* ============ Footer ============ */
+        .footer {
+            text-align: center;
+            padding: 0 0 12px 0;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.45);
+            font-weight: 300;
+        }
+
+        /* Basemap credit. Leaflet's own attribution control is hidden to keep
+           the kiosk clean, so the credit lives here instead. */
+        .attribution {
+            display: block;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.3);
+            margin-top: 3px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-left">
+            <span class="callsign">K8JKU</span>
+            <span class="pota-badge">POTA</span>
+        </div>
+        <div class="header-title">
+            <h1>Parks on the Air</h1>
+            <span class="subtitle">Michigan Activation Map</span>
+        </div>
+    </div>
+
+    <!-- Map -->
+    <div class="map-container">
+        <div id="map"></div>
+        <div class="legend map-legend">
+            <div class="legend-item">
+                <div class="legend-box new"></div>
+                <span>&#9733; New Park</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box fresh"></div>
+                <span>&#9889; Fresh (30 Days)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box activated"></div>
+                <span>My Activations</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box available"></div>
+                <span>Available Parks</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Section -->
+    <div class="info-section">
+        <!-- Stats Panel -->
+        <div class="info-panel">
+            <h2>Activation Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-label">Unique Parks</span>
+                    <span class="stat-value" id="uniqueParks">--</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Total Activations</span>
+                    <span class="stat-value" id="totalActivations">--</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Total QSOs</span>
+                    <span class="stat-value" id="totalQSOs">--</span>
+                </div>
+                <div class="stat-item fresh-stat">
+                    <span class="stat-label">&#9889; Fresh Parks</span>
+                    <span class="stat-value" id="freshParks">--</span>
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <div class="progress-header">
+                    <span class="progress-title">Michigan Parks Progress</span>
+                    <span class="progress-percent" id="progressPercent">--%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                </div>
+                <div class="progress-detail" id="progressDetail">-- of -- Michigan Parks Activated</div>
+            </div>
+        </div>
+
+        <!-- Recent Activations -->
+        <div class="info-panel recent-panel">
+            <h2>Recent Michigan Activations</h2>
+            <div class="recent-list" id="recentList">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <span id="footer">Loading data...</span>
+        <span class="attribution" id="attribution"></span>
+    </div>
+
+    <script>
+        // ============ Tunable constants ============
+        const FRESH_DAYS = 30;          // days a park counts as "fresh" (also the NEW window)
+        const RECENT_COUNT = 6;         // rows in the recent activations list
+        const REFRESH_MINUTES = 30;     // unattended reload cadence for the kiosk
+
+        // Michigan-focused view: shifted north so the whole state,
+        // including the UP and Isle Royale, fits on screen.
+        // DO NOT change without re-checking the on-screen framing.
+        const MICHIGAN_CENTER = [45.0, -85.5];
+        const MICHIGAN_ZOOM = 6.5;
+
+        // Data sources, tried in order. The repo-relative copies are what
+        // GitHub Pages serves (same origin, refreshed daily by the Action);
+        // the Google Storage originals are the fallback and also make the
+        // file work when opened straight from disk.
+        const PARKS_URLS = [
+            'data/Michigan_POTA_Parks.json',
+            'https://storage.googleapis.com/pota-activations0/Michigan_POTA_Parks.json'
+        ];
+        const ACTIVATIONS_URLS = [
+            'data/pota_activations.json',
+            'https://storage.googleapis.com/pota-activations0/pota_activations.json'
+        ];
+
+        // ============ Basemaps ============
+        // CARTO's basemaps.cartocdn.com tiles now require an API key and are
+        // served watermarked ("API KEY REQUIRED") instead of failing, so there
+        // is nothing to detect at runtime -- they are simply gone from this
+        // list. Providers below are keyless; the first one that paints wins.
+        const BASEMAPS = [
+            {
+                name: 'Esri Light Gray',
+                urls: [
+                    'https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+                    'https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}'
+                ],
+                maxZoom: 16,
+                attribution: 'Basemap: Esri, HERE, Garmin, &copy; OpenStreetMap contributors'
+            },
+            {
+                name: 'OpenStreetMap',
+                urls: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
+                maxZoom: 19,
+                attribution: 'Basemap: &copy; OpenStreetMap contributors'
+            }
+        ];
+
+        // How long to give a basemap to paint its first tile before moving on,
+        // and how many tile errors count as "this provider is broken".
+        const BASEMAP_TIMEOUT_MS = 8000;
+        const BASEMAP_ERROR_LIMIT = 4;
+
+        // ============ Map setup ============
+        const map = L.map('map', {
+            center: MICHIGAN_CENTER,
+            zoom: MICHIGAN_ZOOM,
+            zoomControl: false,
+            attributionControl: false,
+            dragging: false,
+            scrollWheelZoom: false,
+            doubleClickZoom: false,
+            touchZoom: false
+        });
+
+        let activeBasemapLayers = [];
+
+        function useBasemap(index) {
+            const basemap = BASEMAPS[index];
+            if (!basemap) return;   // out of providers; keep whatever is showing
+
+            activeBasemapLayers.forEach(layer => map.removeLayer(layer));
+            activeBasemapLayers = basemap.urls.map(url =>
+                L.tileLayer(url, { maxZoom: basemap.maxZoom }).addTo(map)
+            );
+
+            document.getElementById('attribution').innerHTML = basemap.attribution;
+
+            // Fall through to the next provider if this one errors out or
+            // never paints. Only the base layer is watched -- a missing label
+            // overlay is cosmetic and must not trigger a swap.
+            let settled = false;
+            let errors = 0;
+            const baseLayer = activeBasemapLayers[0];
+
+            function nextProvider() {
+                if (settled) return;
+                settled = true;
+                console.warn('Basemap "' + basemap.name + '" unavailable, trying next');
+                useBasemap(index + 1);
+            }
+
+            baseLayer.on('load', () => { settled = true; });
+            baseLayer.on('tileerror', () => {
+                if (++errors >= BASEMAP_ERROR_LIMIT) nextProvider();
+            });
+            setTimeout(() => {
+                if (!settled) nextProvider();
+            }, BASEMAP_TIMEOUT_MS);
+        }
+
+        useBasemap(0);
+
+        // Every park marker lives in this group so a refresh can replace the
+        // whole set instead of stacking duplicates on top of the old ones.
+        const markerLayer = L.layerGroup().addTo(map);
+
+        // Canvas renderer: available + activated parks are drawn on a
+        // single canvas instead of ~370 individual DOM elements.
+        const canvasRenderer = L.canvas({ padding: 0.5 });
+
+        function addCircleMarker(lat, lng, fill, border, radius) {
+            L.circleMarker([lat, lng], {
+                renderer: canvasRenderer,
+                radius: radius,
+                fillColor: fill,
+                color: border,
+                weight: 2,
+                fillOpacity: 1,
+                opacity: 0.9
+            }).addTo(markerLayer);
+        }
+
+        // Fresh + new markers stay as DOM divIcons so they can pulse.
+        const freshMarker = L.divIcon({
+            className: 'custom-marker',
+            html: `<div class="fresh-marker" style="
+                width: 16px;
+                height: 16px;
+                background: #FF9800;
+                border-radius: 50%;
+                border: 2px solid #E65100;
+            "></div>`,
+            iconSize: [16, 16],
+            iconAnchor: [8, 8]
+        });
+
+        // NEW park: first-ever activation happened within FRESH_DAYS.
+        // Blue with a white star; takes precedence over fresh.
+        const newMarker = L.divIcon({
+            className: 'custom-marker',
+            html: `<div class="new-marker">&#9733;</div>`,
+            iconSize: [18, 18],
+            iconAnchor: [9, 9]
+        });
+
+        // ============ Date helpers ============
+        // POTA dates arrive as YYYY-MM-DD. Parsing that bare string runs
+        // through UTC and can shift the day; appending T00:00:00 keeps
+        // everything in local time consistently.
+        function parseLocalDate(dateStr) {
+            if (!dateStr) return null;
+            return dateStr.includes('T') ? new Date(dateStr) : new Date(dateStr + 'T00:00:00');
+        }
+
+        function isFreshDate(date) {
+            if (!date) return false;
+            const cutoff = new Date();
+            cutoff.setDate(cutoff.getDate() - FRESH_DAYS);
+            cutoff.setHours(0, 0, 0, 0);
+            return date >= cutoff;
+        }
+
+        function formatDate(dateStr) {
+            const date = parseLocalDate(dateStr);
+            return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        }
+
+        // Cache-busted fetch so GCS / browser caches never serve stale JSON
+        function fetchFresh(url) {
+            const sep = url.includes('?') ? '&' : '?';
+            return fetch(url + sep + 'v=' + Date.now(), { cache: 'no-store' });
+        }
+
+        // Walk the source list until one responds with usable JSON.
+        async function fetchJSON(urls) {
+            let lastError;
+            for (const url of urls) {
+                try {
+                    const response = await fetchFresh(url);
+                    if (!response.ok) throw new Error(url + ' returned ' + response.status);
+                    return await response.json();
+                } catch (error) {
+                    lastError = error;
+                    console.warn('Data source failed: ' + url, error);
+                }
+            }
+            throw lastError || new Error('No data sources configured');
+        }
+
+        // ============ Load and display ============
+        async function loadData() {
+            try {
+                const [parks, activations] = await Promise.all([
+                    fetchJSON(PARKS_URLS),
+                    fetchJSON(ACTIVATIONS_URLS)
+                ]);
+
+                // Filter for Michigan parks
+                const michiganParks = parks.filter(p =>
+                    p.locationDesc === 'US-MI' ||
+                    (p.locationDesc && p.locationDesc.includes('US-MI'))
+                );
+
+                // Michigan activations
+                const michiganActivations = activations.filter(a => a.location === 'US-MI');
+
+                // Unique activated park references
+                const activatedRefs = new Set(michiganActivations.map(a => a.reference));
+
+                // Most recent AND first activation date per park.
+                // Most recent drives "fresh"; first drives "new".
+                const parkLastActivation = {};
+                const parkFirstActivation = {};
+                michiganActivations.forEach(a => {
+                    const d = parseLocalDate(a.date);
+                    if (!parkLastActivation[a.reference] || d > parkLastActivation[a.reference]) {
+                        parkLastActivation[a.reference] = d;
+                    }
+                    if (!parkFirstActivation[a.reference] || d < parkFirstActivation[a.reference]) {
+                        parkFirstActivation[a.reference] = d;
+                    }
+                });
+
+                // Fresh parks (activated within FRESH_DAYS)
+                const freshRefs = new Set();
+                Object.entries(parkLastActivation).forEach(([ref, lastDate]) => {
+                    if (isFreshDate(lastDate)) freshRefs.add(ref);
+                });
+
+                // NEW parks: first-ever activation within FRESH_DAYS.
+                // A new park is always also fresh; new wins on the map.
+                const newRefs = new Set();
+                Object.entries(parkFirstActivation).forEach(([ref, firstDate]) => {
+                    if (isFreshDate(firstDate)) newRefs.add(ref);
+                });
+
+                // Draw markers: available + activated on canvas,
+                // fresh + new on top as pulsing DOM markers (new outranks fresh).
+                // Cleared only now that the fetch succeeded, so a failed
+                // refresh leaves the previous map on screen.
+                markerLayer.clearLayers();
+
+                michiganParks.forEach(park => {
+                    if (!park.latitude || !park.longitude) return;
+
+                    if (newRefs.has(park.reference)) {
+                        L.marker([park.latitude, park.longitude], { icon: newMarker }).addTo(markerLayer);
+                    } else if (freshRefs.has(park.reference)) {
+                        L.marker([park.latitude, park.longitude], { icon: freshMarker }).addTo(markerLayer);
+                    } else if (activatedRefs.has(park.reference)) {
+                        addCircleMarker(park.latitude, park.longitude, '#ff4444', '#cc0000', 7);
+                    } else {
+                        addCircleMarker(park.latitude, park.longitude, '#FFD700', '#B8860B', 5);
+                    }
+                });
+
+                // Statistics
+                const uniqueParks = activatedRefs.size;
+                const totalActivations = michiganActivations.length;
+                const totalQSOs = michiganActivations.reduce((sum, a) => sum + (a.total || 0), 0);
+                const totalMIParks = michiganParks.length;
+                const progressPercent = ((uniqueParks / totalMIParks) * 100).toFixed(1);
+
+                document.getElementById('uniqueParks').textContent = uniqueParks;
+                document.getElementById('totalActivations').textContent = totalActivations;
+                document.getElementById('totalQSOs').textContent = totalQSOs.toLocaleString();
+                document.getElementById('freshParks').textContent = freshRefs.size;
+                document.getElementById('progressPercent').textContent = `${progressPercent}%`;
+                document.getElementById('progressFill').style.width = `${progressPercent}%`;
+                document.getElementById('progressDetail').textContent =
+                    `${uniqueParks} of ${totalMIParks} Michigan Parks Activated`;
+
+                // Recent activations (NEW badge outranks FRESH)
+                const recentMI = michiganActivations
+                    .slice()
+                    .sort((a, b) => parseLocalDate(b.date) - parseLocalDate(a.date))
+                    .slice(0, RECENT_COUNT);
+
+                document.getElementById('recentList').innerHTML = recentMI.map(act => {
+                    const isNew = newRefs.has(act.reference);
+                    const isFresh = !isNew && isFreshDate(parseLocalDate(act.date));
+                    const rowClass = isNew ? 'new' : (isFresh ? 'fresh' : '');
+                    const badge = isNew
+                        ? '<span class="new-badge">&#9733; NEW</span>'
+                        : (isFresh ? '<span class="fresh-badge">&#9889; FRESH</span>' : '');
+                    return `
+                        <div class="recent-item ${rowClass}">
+                            <span class="recent-park">${act.park}</span>
+                            <div class="recent-meta">
+                                ${badge}
+                                <span class="recent-qsos">${act.total} QSOs</span>
+                                <span class="recent-date">${formatDate(act.date)}</span>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                // Footer timestamp doubles as a health check
+                document.getElementById('footer').textContent =
+                    'Data loaded ' + new Date().toLocaleString('en-US', {
+                        month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
+                    });
+
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('footer').textContent = 'Data load failed';
+            }
+        }
+
+        loadData();
+
+        // The kiosk may leave this page up for days, so pull fresh data on a
+        // timer rather than relying on Dakboard to reload the frame.
+        setInterval(loadData, REFRESH_MINUTES * 60 * 1000);
+    </script>
+</body>
+</html>
