@@ -2698,5 +2698,15 @@
         "data": 36,
         "phone": 0,
         "total": 36
+    },
+    {
+        "date": "2026-08-30",
+        "reference": "US-3313",
+        "park": "Holly State Recreation Area",
+        "location": "US-MI",
+        "cw": 0,
+        "data": 0,
+        "phone": 62,
+        "total": 62
     }
 ]
