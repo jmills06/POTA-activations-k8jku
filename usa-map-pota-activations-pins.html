@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K8JKU POTA State Activation Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a3a1a 0%, #0d1f0d 100%);
+            color: #ffffff;
+            font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+            width: 1080px;
+            height: 1920px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ============ Shared POTA Header ============ */
+        .header {
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .callsign {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #FF9800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .pota-badge {
+            background: #43A047;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .header-title {
+            text-align: right;
+        }
+
+        .header-title h1 {
+            color: #FF9800;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 2px;
+            letter-spacing: 1px;
+        }
+
+        .header-title .subtitle {
+            color: #8BC34A;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        /* ============ Content Column ============ */
+        .content {
+            flex: 1;
+            min-height: 0;
+            padding: 0 15px 15px 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* ============ Panels ============ */
+        .info-panel {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border: 3px solid #FF9800;
+        }
+
+        .info-panel h2 {
+            color: #FF9800;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #FF9800;
+            padding-bottom: 8px;
+        }
+
+        /* ============ Map Panel ============ */
+        .map-panel {
+            position: relative;
+        }
+
+        .map-panel svg {
+            width: 100%;
+            height: auto;
+            max-height: 590px;
+            display: block;
+        }
+
+        svg path {
+            fill: #e8f5e9;
+            stroke: #2e7d32;
+            stroke-width: 1.5;
+        }
+
+        svg path.activated {
+            fill: #43A047;
+            stroke: #1b5e20;
+            stroke-width: 2;
+        }
+
+        /* Fresh states: static glow + opacity pulse only.
+           Animating drop-shadow itself is very expensive on signage hardware. */
+        svg path.fresh {
+            fill: #FF9800;
+            stroke: #E65100;
+            stroke-width: 2;
+            filter: drop-shadow(0 0 10px rgba(255, 152, 0, 0.7));
+            animation: pulse-opacity 2s ease-in-out infinite;
+        }
+
+        /* NEW states: first-ever activation within the fresh window.
+           Blue, static glow, slightly quicker pulse. Outranks fresh. */
+        svg path.new {
+            fill: #2196F3;
+            stroke: #1565C0;
+            stroke-width: 2;
+            filter: drop-shadow(0 0 10px rgba(33, 150, 243, 0.8));
+            animation: pulse-opacity 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-opacity {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        svg text {
+            fill: #1b5e20;
+            font-size: 10px;
+            font-weight: 600;
+            pointer-events: none;
+        }
+
+        /* ============ Park dots (heat map) ============
+           Static circles, no filters or animation (cheap on the Pi).
+           Size and stroke width are set in JS so they stay in screen px.
+           Fill opacity rises with the number of parks a dot represents;
+           the outline stays solid so every dot keeps a crisp edge. */
+        svg circle.park-dot.old {
+            fill: #ffffff;
+            stroke: #1b5e20;
+        }
+
+        svg circle.park-dot.fresh {
+            fill: #E65100;
+            stroke: #ffffff;
+        }
+
+        svg circle.park-dot.new {
+            fill: #1565C0;
+            stroke: #ffffff;
+        }
+
+        /* ============ City markers (very light) ============ */
+        /* Square, dark gray: reads differently from the round park dots */
+        svg rect.city-mark {
+            fill: #757575;
+            stroke: #ffffff;
+        }
+
+        svg text.city-label {
+            fill: #7a7a7a;
+            font-weight: 400;
+            stroke: rgba(255, 255, 255, 0.55);
+            stroke-linejoin: round;
+            paint-order: stroke;
+        }
+
+        /* ============ Shared Legend (overlaid on map) ============ */
+        .legend {
+            display: flex;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px 18px;
+            border-radius: 10px;
+            border: 2px solid #2e7d32;
+        }
+
+        .map-legend {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            z-index: 10;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #2e7d32;
+            font-weight: 600;
+        }
+
+        .legend-box {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            border: 2px solid #2e7d32;
+        }
+
+        .legend-box.new {
+            background-color: #2196F3;
+            border-color: #1565C0;
+        }
+
+        .legend-box.fresh {
+            background-color: #FF9800;
+            border-color: #E65100;
+        }
+
+        .legend-box.activated {
+            background-color: #43A047;
+        }
+
+        .legend-box.not-activated {
+            background-color: #e8f5e9;
+        }
+
+        /* ============ Stats ============ */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 12px;
+            background: #e8f5e9;
+            border-radius: 8px;
+            border-left: 4px solid #43A047;
+        }
+
+        .stat-item.fresh-stat {
+            background: #fff3e0;
+            border-left-color: #FF9800;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #2e7d32;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .stat-item.fresh-stat .stat-label {
+            color: #E65100;
+        }
+
+        .stat-value {
+            font-size: 2.2rem;
+            color: #1b5e20;
+            font-weight: 700;
+        }
+
+        .stat-item.fresh-stat .stat-value {
+            color: #FF9800;
+        }
+
+        /* ============ Progress ============ */
+        .progress-section {
+            margin-top: 15px;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .progress-title {
+            color: #2e7d32;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .progress-percent {
+            color: #1b5e20;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background: #e8f5e9;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #43A047;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #43A047 0%, #66BB6A 100%);
+            border-radius: 8px;
+            transition: width 1s ease-out;
+        }
+
+        .progress-detail {
+            color: #2e7d32;
+            font-size: 0.85rem;
+            text-align: center;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        /* ============ State Grids ============ */
+        .activated-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+        }
+
+        .state-box {
+            border: 2px solid #2e7d32;
+            border-radius: 8px;
+            padding: 10px 8px;
+            text-align: center;
+            color: white;
+        }
+
+        .state-box.activated {
+            background: #43A047;
+        }
+
+        .state-box.fresh {
+            background: #FF9800;
+            border-color: #E65100;
+        }
+
+        .state-box.new {
+            background: #2196F3;
+            border-color: #1565C0;
+        }
+
+        .state-abbr {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .state-stats {
+            font-size: 0.7rem;
+            opacity: 0.95;
+            line-height: 1.3;
+        }
+
+        .fresh-flag {
+            font-size: 0.65rem;
+            font-weight: 700;
+            margin-top: 3px;
+        }
+
+        .remaining-label {
+            color: #2e7d32;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 14px 0 8px 0;
+        }
+
+        .remaining-grid {
+            display: grid;
+            grid-template-columns: repeat(13, 1fr);
+            gap: 6px;
+        }
+
+        .state-chip {
+            background: #e0e0e0;
+            color: #757575;
+            border: 2px solid #bdbdbd;
+            border-radius: 6px;
+            padding: 6px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        /* ============ Recent Activations ============ */
+        .recent-panel {
+            flex: 1;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .recent-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            overflow: hidden;
+        }
+
+        .recent-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #e8f5e9;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid #43A047;
+        }
+
+        .recent-item.fresh {
+            border-left-color: #FF9800;
+            background: #fff3e0;
+        }
+
+        .recent-item.new {
+            border-left-color: #2196F3;
+            background: #e3f2fd;
+        }
+
+        .recent-park {
+            color: #1b5e20;
+            font-size: 0.9rem;
+            font-weight: 600;
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-right: 10px;
+        }
+
+        .recent-state {
+            background: #43A047;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-right: 12px;
+        }
+
+        .recent-item.fresh .recent-state {
+            background: #FF9800;
+        }
+
+        .recent-item.new .recent-state {
+            background: #2196F3;
+        }
+
+        .recent-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .recent-qsos {
+            color: #43A047;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .recent-item.fresh .recent-qsos {
+            color: #FF9800;
+        }
+
+        .recent-item.new .recent-qsos {
+            color: #2196F3;
+        }
+
+        .recent-date {
+            color: #666;
+            font-size: 0.8rem;
+            min-width: 55px;
+            text-align: right;
+        }
+
+        .fresh-badge {
+            background: #FF9800;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 700;
+        }
+
+        .new-badge {
+            background: #2196F3;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 700;
+        }
+
+        /* ============ Loading / Error / Footer ============ */
+        #loading {
+            font-size: 2rem;
+            color: #FF9800;
+            font-weight: 600;
+            text-align: center;
+            padding: 60px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: pulse-opacity 2s ease-in-out infinite;
+        }
+
+        #error {
+            font-size: 1.2rem;
+            color: #ff5555;
+            display: none;
+            background: rgba(255, 85, 85, 0.1);
+            padding: 15px;
+            margin: 0 15px;
+            border-radius: 10px;
+            border: 2px solid #ff5555;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 0 0 12px 0;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.45);
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-left">
+            <span class="callsign">K8JKU</span>
+            <span class="pota-badge">POTA</span>
+        </div>
+        <div class="header-title">
+            <h1>Parks on the Air</h1>
+            <span class="subtitle">State Activation Tracker</span>
+        </div>
+    </div>
+
+    <div id="loading">Loading map data...</div>
+    <div id="error"></div>
+
+    <div class="content" id="content" style="display: none;">
+        <!-- Map -->
+        <div class="info-panel map-panel">
+            <div id="map-container">
+                <!-- SVG inserted here -->
+            </div>
+            <div class="legend map-legend">
+                <div class="legend-item">
+                    <div class="legend-box new"></div>
+                    <span>&#9733; New State</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box fresh"></div>
+                    <span>&#9889; Fresh (30 Days)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box activated"></div>
+                    <span>Activated</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box not-activated"></div>
+                    <span>Not Activated</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Panel -->
+        <div class="info-panel">
+            <h2>Activation Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-label">States Activated</span>
+                    <span class="stat-value" id="stat-states">--</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Total Activations</span>
+                    <span class="stat-value" id="stat-total">--</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Unique Parks</span>
+                    <span class="stat-value" id="stat-parks">--</span>
+                </div>
+                <div class="stat-item fresh-stat">
+                    <span class="stat-label">&#9889; Fresh States</span>
+                    <span class="stat-value" id="stat-fresh">--</span>
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <div class="progress-header">
+                    <span class="progress-title">All States Progress</span>
+                    <span class="progress-percent" id="progressPercent">--%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                </div>
+                <div class="progress-detail" id="progressDetail">-- of 50 States Activated</div>
+            </div>
+        </div>
+
+        <!-- State Activations -->
+        <div class="info-panel">
+            <h2>State Activations</h2>
+            <div class="activated-grid" id="activated-grid">
+                <!-- Activated state boxes inserted here -->
+            </div>
+            <div class="remaining-label" id="remaining-label">Still to Activate</div>
+            <div class="remaining-grid" id="remaining-grid">
+                <!-- Compact chips for not-activated states -->
+            </div>
+        </div>
+
+        <!-- Recent Activations -->
+        <div class="info-panel recent-panel">
+            <h2>Recent Activations</h2>
+            <div class="recent-list" id="recentList">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer" id="footer">Loading data...</div>
+
+    <script>
+        // ============ Tunable constants ============
+        const FRESH_DAYS = 30;      // days a state counts as "fresh" (also the NEW window)
+        const RECENT_COUNT = 5;     // rows in the recent activations list
+        const TOTAL_STATES = 50;
+        const SHOW_CITIES = true;   // metro cities nearest your activations; false hides them
+        const REFRESH_MINUTES = 10; // data reload while the board stays loaded
+        const TIMEZONE = 'America/Detroit';
+
+        // Park dots: parks within DOT_CLUSTER_PX of a dot (on screen) join it.
+        // Every dot is the same size; its fill opacity climbs from
+        // DOT_MIN_OPACITY (1 park) to 1.0 (DOT_FULL_AT parks or more).
+        const DOT_RADIUS_PX = 3.5;
+        const DOT_CLUSTER_PX = 12;
+        const DOT_MIN_OPACITY = 0.35;
+        const DOT_FULL_AT = 5;
+
+        // Data URLs
+        const JSON_URL = 'https://storage.googleapis.com/pota-activations0/pota_activations.json';
+        const SVG_URL = 'https://storage.googleapis.com/pota-activations0/usa.svg';
+        const PARKS_URL = 'https://jmills06.github.io/POTA-activations-k8jku/data/activated_parks.json';
+
+        // ============ Map projection ============
+        // usa.svg is a Mercator map (viewBox 0 0 593.4 318.3) whose lower-48
+        // bounds are declared in its mapsvg:geoViewBox attribute. Hawaii and
+        // Alaska are hand-placed insets; their transforms were fitted to the
+        // island / mainland outlines in the SVG (both are Mercator too).
+        // Checked against every park and city: all land inside their state
+        // or within about 1 px of its coastline or border.
+        const MAP = {
+            west: -127.55272679845754, north: 50.66828705652597,
+            east: -64.54920772895363, south: 24.335873369454947,
+            width: 593.4, height: 318.3
+        };
+        const INSETS = {
+            HI: { ax: 9.443177, bx: 1624.937841, ay: -526.469441, by: 470.873 },
+            AK: { ax: 1.551181, bx: 287.82252, ay: -87.833188, by: 391.475218 }
+        };
+
+        function mercY(lat) {
+            return Math.log(Math.tan(Math.PI / 4 + lat * Math.PI / 360));
+        }
+
+        // lat/lon -> SVG user units
+        function project(lat, lon, stateCode) {
+            const inset = INSETS[stateCode];
+            if (inset) {
+                return [inset.ax * lon + inset.bx, inset.ay * mercY(lat) + inset.by];
+            }
+            return [
+                (lon - MAP.west) / (MAP.east - MAP.west) * MAP.width,
+                (mercY(MAP.north) - mercY(lat)) / (mercY(MAP.north) - mercY(MAP.south)) * MAP.height
+            ];
+        }
+
+        // Cities: the metro-area city nearest to where parks were activated.
+        // Each plotted park votes for its closest city (if one is within
+        // CITY_MAX_MILES). Cities are ranked by votes x metro population, so
+        // a well-known metro wins over a small neighbor with a few more
+        // parks, and labeled at least CITY_MIN_SPACING_PX apart, up to
+        // CITY_MAX of them.
+        const CITY_MAX_MILES = 60;
+        const CITY_MIN_SPACING_PX = 35;
+        const CITY_MAX = 12;
+
+        // Core cities of US metro areas (roughly 350k people and up), plus
+        // the largest city of every state.
+        // [name, state, lat, lon, metro population in millions, label spot]
+        // Label spot is optional ('right', 'left', 'below' or 'above') and
+        // overrides the automatic placement, which avoids park dots.
+        const CITIES = [
+            ['Birmingham', 'AL', 33.5186, -86.8104, 1.1], ['Huntsville', 'AL', 34.7304, -86.5861, 0.5],
+            ['Mobile', 'AL', 30.6954, -88.0399, 0.43], ['Montgomery', 'AL', 32.3792, -86.3077, 0.39],
+            ['Anchorage', 'AK', 61.2181, -149.9003, 0.4],
+            ['Phoenix', 'AZ', 33.4484, -112.0740, 4.9], ['Tucson', 'AZ', 32.2226, -110.9747, 1.05],
+            ['Little Rock', 'AR', 34.7465, -92.2896, 0.75], ['Fayetteville', 'AR', 36.0626, -94.1574, 0.55],
+            ['Los Angeles', 'CA', 34.0522, -118.2437, 13.2], ['San Diego', 'CA', 32.7157, -117.1611, 3.3],
+            ['San Francisco', 'CA', 37.7749, -122.4194, 4.7], ['San Jose', 'CA', 37.3382, -121.8863, 2.0],
+            ['Sacramento', 'CA', 38.5816, -121.4944, 2.4], ['Fresno', 'CA', 36.7378, -119.7871, 1.0],
+            ['Bakersfield', 'CA', 35.3733, -119.0187, 0.9], ['Riverside', 'CA', 33.9806, -117.3755, 4.6],
+            ['Stockton', 'CA', 37.9577, -121.2908, 0.78], ['Oxnard', 'CA', 34.1975, -119.1771, 0.84],
+            ['Modesto', 'CA', 37.6391, -120.9969, 0.55], ['Santa Rosa', 'CA', 38.4404, -122.7141, 0.49],
+            ['Denver', 'CO', 39.7392, -104.9903, 3.0], ['Colorado Springs', 'CO', 38.8339, -104.8214, 0.76],
+            ['Fort Collins', 'CO', 40.5853, -105.0844, 0.36],
+            ['Hartford', 'CT', 41.7658, -72.6734, 1.2], ['Bridgeport', 'CT', 41.1865, -73.1952, 0.95],
+            ['New Haven', 'CT', 41.3083, -72.9279, 0.86],
+            ['Wilmington', 'DE', 39.7391, -75.5398, 0.72], ['Washington', 'DC', 38.9072, -77.0369, 6.4],
+            ['Jacksonville', 'FL', 30.3322, -81.6557, 1.6], ['Miami', 'FL', 25.7617, -80.1918, 6.1],
+            ['Tampa', 'FL', 27.9506, -82.4572, 3.2], ['Orlando', 'FL', 28.5383, -81.3792, 2.7],
+            ['Tallahassee', 'FL', 30.4383, -84.2807, 0.39], ['Pensacola', 'FL', 30.4213, -87.2169, 0.51],
+            ['Fort Myers', 'FL', 26.6406, -81.8723, 0.76], ['Sarasota', 'FL', 27.3364, -82.5307, 0.83],
+            ['Lakeland', 'FL', 28.0395, -81.9498, 0.72], ['Daytona Beach', 'FL', 29.2108, -81.0228, 0.67],
+            ['Melbourne', 'FL', 28.0836, -80.6081, 0.61],
+            ['Atlanta', 'GA', 33.7490, -84.3880, 6.1], ['Augusta', 'GA', 33.4735, -82.0105, 0.61],
+            ['Savannah', 'GA', 32.0809, -81.0912, 0.4], ['Columbus', 'GA', 32.4610, -84.9877, 0.33],
+            ['Honolulu', 'HI', 21.3069, -157.8583, 1.0, 'below'],
+            ['Boise', 'ID', 43.6150, -116.2023, 0.76],
+            ['Chicago', 'IL', 41.8781, -87.6298, 9.6], ['Rockford', 'IL', 42.2711, -89.0940, 0.34],
+            ['Peoria', 'IL', 40.6936, -89.5890, 0.4], ['Springfield', 'IL', 39.7817, -89.6501, 0.21],
+            ['Indianapolis', 'IN', 39.7684, -86.1581, 2.1], ['Fort Wayne', 'IN', 41.0793, -85.1394, 0.42],
+            ['Evansville', 'IN', 37.9716, -87.5711, 0.31], ['South Bend', 'IN', 41.6764, -86.2520, 0.32],
+            ['Des Moines', 'IA', 41.5868, -93.6250, 0.7], ['Davenport', 'IA', 41.5236, -90.5776, 0.38],
+            ['Wichita', 'KS', 37.6872, -97.3301, 0.65],
+            ['Louisville', 'KY', 38.2527, -85.7585, 1.3], ['Lexington', 'KY', 38.0406, -84.5037, 0.52],
+            ['New Orleans', 'LA', 29.9511, -90.0715, 1.27], ['Baton Rouge', 'LA', 30.4515, -91.1871, 0.87],
+            ['Shreveport', 'LA', 32.5252, -93.7502, 0.39], ['Lafayette', 'LA', 30.2241, -92.0198, 0.48],
+            ['Portland', 'ME', 43.6591, -70.2568, 0.55],
+            ['Baltimore', 'MD', 39.2904, -76.6122, 2.8],
+            ['Boston', 'MA', 42.3601, -71.0589, 4.9], ['Worcester', 'MA', 42.2626, -71.8023, 0.98],
+            ['Springfield', 'MA', 42.1015, -72.5898, 0.7],
+            ['Detroit', 'MI', 42.3314, -83.0458, 4.4], ['Grand Rapids', 'MI', 42.9634, -85.6681, 1.1],
+            ['Lansing', 'MI', 42.7325, -84.5555, 0.54], ['Flint', 'MI', 43.0125, -83.6875, 0.4],
+            ['Ann Arbor', 'MI', 42.2808, -83.7430, 0.37],
+            ['Minneapolis', 'MN', 44.9778, -93.2650, 3.7],
+            ['Jackson', 'MS', 32.2988, -90.1848, 0.59], ['Gulfport', 'MS', 30.3674, -89.0928, 0.42],
+            ['Kansas City', 'MO', 39.0997, -94.5786, 2.2], ['St. Louis', 'MO', 38.6270, -90.1994, 2.8],
+            ['Springfield', 'MO', 37.2090, -93.2923, 0.48],
+            ['Billings', 'MT', 45.7833, -108.5007, 0.18],
+            ['Omaha', 'NE', 41.2565, -95.9345, 0.97], ['Lincoln', 'NE', 40.8136, -96.7026, 0.34],
+            ['Las Vegas', 'NV', 36.1699, -115.1398, 2.3], ['Reno', 'NV', 39.5296, -119.8138, 0.49],
+            ['Manchester', 'NH', 42.9956, -71.4548, 0.42],
+            ['Newark', 'NJ', 40.7357, -74.1724, 1.0],
+            ['Albuquerque', 'NM', 35.0844, -106.6504, 0.92],
+            ['New York', 'NY', 40.7128, -74.0060, 19.8], ['Buffalo', 'NY', 42.8864, -78.8784, 1.17],
+            ['Rochester', 'NY', 43.1566, -77.6088, 1.09], ['Albany', 'NY', 42.6526, -73.7562, 0.9],
+            ['Syracuse', 'NY', 43.0481, -76.1474, 0.66],
+            ['Charlotte', 'NC', 35.2271, -80.8431, 2.7], ['Raleigh', 'NC', 35.7796, -78.6382, 1.4],
+            ['Greensboro', 'NC', 36.0726, -79.7920, 0.78], ['Winston-Salem', 'NC', 36.0999, -80.2442, 0.68],
+            ['Asheville', 'NC', 35.5951, -82.5515, 0.47], ['Wilmington', 'NC', 34.2257, -77.9447, 0.29],
+            ['Fargo', 'ND', 46.8772, -96.7898, 0.25],
+            ['Columbus', 'OH', 39.9612, -82.9988, 2.1], ['Cleveland', 'OH', 41.4993, -81.6944, 2.1],
+            ['Cincinnati', 'OH', 39.1031, -84.5120, 2.26], ['Dayton', 'OH', 39.7589, -84.1916, 0.81],
+            ['Toledo', 'OH', 41.6528, -83.5379, 0.65], ['Akron', 'OH', 41.0814, -81.5190, 0.7],
+            ['Youngstown', 'OH', 41.0998, -80.6495, 0.54],
+            ['Oklahoma City', 'OK', 35.4676, -97.5164, 1.4], ['Tulsa', 'OK', 36.1540, -95.9928, 1.0],
+            ['Portland', 'OR', 45.5152, -122.6784, 2.5], ['Eugene', 'OR', 44.0521, -123.0868, 0.38],
+            ['Salem', 'OR', 44.9429, -123.0351, 0.43],
+            ['Philadelphia', 'PA', 39.9526, -75.1652, 6.2], ['Pittsburgh', 'PA', 40.4406, -79.9959, 2.4],
+            ['Harrisburg', 'PA', 40.2732, -76.8867, 0.59], ['Allentown', 'PA', 40.6023, -75.4714, 0.86],
+            ['Scranton', 'PA', 41.4090, -75.6624, 0.57], ['Lancaster', 'PA', 40.0379, -76.3055, 0.55],
+            ['Providence', 'RI', 41.8240, -71.4128, 1.68],
+            ['Charleston', 'SC', 32.7765, -79.9311, 0.8], ['Columbia', 'SC', 34.0007, -81.0348, 0.83],
+            ['Greenville', 'SC', 34.8526, -82.3940, 0.93],
+            ['Sioux Falls', 'SD', 43.5446, -96.7311, 0.28],
+            ['Nashville', 'TN', 36.1627, -86.7816, 2.0], ['Memphis', 'TN', 35.1495, -90.0490, 1.34],
+            ['Knoxville', 'TN', 35.9606, -83.9207, 0.88], ['Chattanooga', 'TN', 35.0456, -85.3097, 0.56],
+            ['Houston', 'TX', 29.7604, -95.3698, 7.1], ['Dallas', 'TX', 32.7767, -96.7970, 7.6],
+            ['San Antonio', 'TX', 29.4241, -98.4936, 2.6], ['Austin', 'TX', 30.2672, -97.7431, 2.3],
+            ['Fort Worth', 'TX', 32.7555, -97.3308, 2.0], ['El Paso', 'TX', 31.7619, -106.4850, 0.87],
+            ['McAllen', 'TX', 26.2034, -98.2300, 0.87], ['Corpus Christi', 'TX', 27.8006, -97.3964, 0.42],
+            ['Salt Lake City', 'UT', 40.7608, -111.8910, 1.26], ['Provo', 'UT', 40.2338, -111.6585, 0.67],
+            ['Ogden', 'UT', 41.2230, -111.9738, 0.69],
+            ['Burlington', 'VT', 44.4759, -73.2121, 0.23],
+            ['Virginia Beach', 'VA', 36.8529, -75.9780, 1.8], ['Richmond', 'VA', 37.5407, -77.4360, 1.3],
+            ['Seattle', 'WA', 47.6062, -122.3321, 4.0], ['Spokane', 'WA', 47.6588, -117.4260, 0.59],
+            ['Charleston', 'WV', 38.3498, -81.6326, 0.26],
+            ['Milwaukee', 'WI', 43.0389, -87.9065, 1.57], ['Madison', 'WI', 43.0731, -89.4012, 0.68],
+            ['Cheyenne', 'WY', 41.1400, -104.8202, 0.1]
+        ];
+
+        function milesBetween(lat1, lon1, lat2, lon2) {
+            const toRad = Math.PI / 180;
+            const dLat = (lat2 - lat1) * toRad;
+            const dLon = (lon2 - lon1) * toRad;
+            const h = Math.sin(dLat / 2) ** 2 +
+                Math.cos(lat1 * toRad) * Math.cos(lat2 * toRad) * Math.sin(dLon / 2) ** 2;
+            return 3958.8 * 2 * Math.asin(Math.sqrt(h));
+        }
+
+        // Pick the cities to label for the given parks (see CITY_* above).
+        function pickCities(parks, unit) {
+            const votes = new Map();
+            parks.forEach(p => {
+                let best = null;
+                let bestMiles = CITY_MAX_MILES;
+                CITIES.forEach(c => {
+                    const miles = milesBetween(p.latitude, p.longitude, c[2], c[3]);
+                    if (miles <= bestMiles) { best = c; bestMiles = miles; }
+                });
+                if (best) votes.set(best, (votes.get(best) || 0) + 1);
+            });
+
+            const chosen = [];
+            [...votes.entries()]
+                .sort((a, b) => b[1] * b[0][4] - a[1] * a[0][4] || a[0][0].localeCompare(b[0][0]))
+                .forEach(([c]) => {
+                    if (chosen.length >= CITY_MAX) return;
+                    const [x, y] = project(c[2], c[3], c[1]);
+                    const crowded = chosen.some(o =>
+                        Math.hypot(o.x - x, o.y - y) < CITY_MIN_SPACING_PX * unit);
+                    if (!crowded) chosen.push({ name: c[0], place: c[5], x, y });
+                });
+            return chosen;
+        }
+
+        const ALL_STATES = [
+            'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA',
+            'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD',
+            'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ',
+            'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC',
+            'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+        ];
+
+        // ============ Date helpers ============
+        // POTA dates arrive as YYYY-MM-DD. Parsing that bare string runs
+        // through UTC and can shift the day; appending T00:00:00 keeps
+        // everything in local time consistently.
+        function parseLocalDate(dateStr) {
+            if (!dateStr) return null;
+            return dateStr.includes('T') ? new Date(dateStr) : new Date(dateStr + 'T00:00:00');
+        }
+
+        function isFreshDate(date) {
+            if (!date) return false;
+            const cutoff = new Date();
+            cutoff.setDate(cutoff.getDate() - FRESH_DAYS);
+            cutoff.setHours(0, 0, 0, 0);
+            return date >= cutoff;
+        }
+
+        function formatDate(dateStr) {
+            const date = parseLocalDate(dateStr);
+            return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        }
+
+        // Cache-busted fetch so GCS / browser caches never serve stale data.
+        // Gives up after 20 s so a hung request can't stall a refresh.
+        function fetchFresh(url) {
+            const sep = url.includes('?') ? '&' : '?';
+            const controller = new AbortController();
+            const timer = setTimeout(() => controller.abort(), 20000);
+            return fetch(url + sep + 'v=' + Date.now(), { cache: 'no-store', signal: controller.signal })
+                .finally(() => clearTimeout(timer));
+        }
+
+        function formatStamp(date) {
+            return date.toLocaleString('en-US', {
+                timeZone: TIMEZONE, month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
+            });
+        }
+
+        // ============ Data shaping ============
+        function getMostRecentActivationByState(activations) {
+            const stateData = {};
+            activations.forEach(a => {
+                if (a.location && a.location.startsWith('US-')) {
+                    const stateCode = a.location.split('-')[1];
+                    const d = parseLocalDate(a.date);
+                    if (!stateData[stateCode] || d > stateData[stateCode]) {
+                        stateData[stateCode] = d;
+                    }
+                }
+            });
+            return stateData;
+        }
+
+        // First-ever activation per state; drives the NEW tier.
+        function getFirstActivationByState(activations) {
+            const stateData = {};
+            activations.forEach(a => {
+                if (a.location && a.location.startsWith('US-')) {
+                    const stateCode = a.location.split('-')[1];
+                    const d = parseLocalDate(a.date);
+                    if (!stateData[stateCode] || d < stateData[stateCode]) {
+                        stateData[stateCode] = d;
+                    }
+                }
+            });
+            return stateData;
+        }
+
+        function getStateStats(activations, mostRecentByState, firstByState) {
+            const stateData = {};
+            ALL_STATES.forEach(s => {
+                stateData[s] = { activations: 0, parks: new Set(), isFresh: false, isNew: false };
+            });
+
+            activations.forEach(a => {
+                if (a.location && a.location.startsWith('US-')) {
+                    const stateCode = a.location.split('-')[1];
+                    if (stateData[stateCode]) {
+                        stateData[stateCode].activations++;
+                        stateData[stateCode].parks.add(a.reference);
+                    }
+                }
+            });
+
+            Object.keys(mostRecentByState).forEach(s => {
+                if (stateData[s]) {
+                    stateData[s].isFresh = isFreshDate(mostRecentByState[s]);
+                }
+            });
+
+            // New outranks fresh: a state is NEW if its first-ever
+            // activation happened within FRESH_DAYS.
+            Object.keys(firstByState).forEach(s => {
+                if (stateData[s] && isFreshDate(firstByState[s])) {
+                    stateData[s].isNew = true;
+                }
+            });
+
+            const stateArray = Object.entries(stateData).map(([state, data]) => ({
+                state: state,
+                activations: data.activations,
+                parks: data.parks.size,
+                isFresh: data.isFresh,
+                isNew: data.isNew
+            }));
+
+            // New states first, then fresh, then by activation count, then alphabetical
+            stateArray.sort((a, b) => {
+                if (a.isNew !== b.isNew) return a.isNew ? -1 : 1;
+                if (a.isFresh !== b.isFresh) return a.isFresh ? -1 : 1;
+                if (b.activations !== a.activations) return b.activations - a.activations;
+                return a.state.localeCompare(b.state);
+            });
+
+            return stateArray;
+        }
+
+        // ============ Render ============
+        function populateStateGrids(stateStats) {
+            const activated = stateStats.filter(s => s.activations > 0);
+            const remaining = stateStats.filter(s => s.activations === 0)
+                .sort((a, b) => a.state.localeCompare(b.state));
+
+            document.getElementById('activated-grid').innerHTML = activated.map(s => {
+                const boxClass = s.isNew ? 'new' : (s.isFresh ? 'fresh' : 'activated');
+                const flag = s.isNew
+                    ? '<div class="fresh-flag">&#9733; NEW</div>'
+                    : (s.isFresh ? '<div class="fresh-flag">&#9889; FRESH</div>' : '');
+                return `
+                    <div class="state-box ${boxClass}">
+                        <div class="state-abbr">${s.state}</div>
+                        <div class="state-stats">
+                            <div>${s.parks} park${s.parks !== 1 ? 's' : ''}</div>
+                            <div>${s.activations} activation${s.activations !== 1 ? 's' : ''}</div>
+                        </div>
+                        ${flag}
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('remaining-label').textContent =
+                `Still to Activate (${remaining.length})`;
+            document.getElementById('remaining-grid').innerHTML = remaining.map(s =>
+                `<div class="state-chip">${s.state}</div>`
+            ).join('');
+        }
+
+        function populateRecentList(activations, newStatesSet) {
+            const recent = activations
+                .filter(a => a.location && a.location.startsWith('US-'))
+                .sort((a, b) => parseLocalDate(b.date) - parseLocalDate(a.date))
+                .slice(0, RECENT_COUNT);
+
+            document.getElementById('recentList').innerHTML = recent.map(act => {
+                const stateCode = act.location.split('-')[1];
+                const isNew = newStatesSet.has(stateCode);
+                const isFresh = !isNew && isFreshDate(parseLocalDate(act.date));
+                const rowClass = isNew ? 'new' : (isFresh ? 'fresh' : '');
+                const badge = isNew
+                    ? '<span class="new-badge">&#9733; NEW STATE</span>'
+                    : (isFresh ? '<span class="fresh-badge">&#9889; FRESH</span>' : '');
+                return `
+                    <div class="recent-item ${rowClass}">
+                        <span class="recent-state">${stateCode}</span>
+                        <span class="recent-park">${act.park}</span>
+                        <div class="recent-meta">
+                            ${badge}
+                            <span class="recent-qsos">${act.total} QSOs</span>
+                            <span class="recent-date">${formatDate(act.date)}</span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // The base map never changes, so it is fetched once and reused on refresh.
+        let svgTextCache = null;
+
+        async function loadSVGMap(activatedStates, freshStates, newStates) {
+            if (!svgTextCache) {
+                const response = await fetchFresh(SVG_URL);
+                if (!response.ok) {
+                    throw new Error(`Failed to load SVG map: ${response.status} ${response.statusText}`);
+                }
+                svgTextCache = await response.text();
+            }
+            document.getElementById('map-container').innerHTML = svgTextCache;
+
+            const svg = document.querySelector('#map-container svg');
+
+            // New outranks fresh, fresh outranks activated
+            newStates.forEach(stateCode => {
+                const statePath = svg.querySelector(`#US-${stateCode}`);
+                if (statePath) statePath.classList.add('new');
+            });
+
+            freshStates.forEach(stateCode => {
+                const statePath = svg.querySelector(`#US-${stateCode}`);
+                if (statePath && !statePath.classList.contains('new')) {
+                    statePath.classList.add('fresh');
+                }
+            });
+
+            activatedStates.forEach(stateCode => {
+                const statePath = svg.querySelector(`#US-${stateCode}`);
+                if (statePath &&
+                    !statePath.classList.contains('new') &&
+                    !statePath.classList.contains('fresh')) {
+                    statePath.classList.add('activated');
+                }
+            });
+        }
+
+        // ============ Park dots and cities ============
+        const SVG_NS = 'http://www.w3.org/2000/svg';
+
+        // Parks we can place on the US map: single-state US parks that are
+        // not trails (a trail's one coordinate is often far from where it
+        // was activated, e.g. North Country Trail sits in North Dakota).
+        function isPlottablePark(p) {
+            return p && typeof p.latitude === 'number' && typeof p.longitude === 'number' &&
+                typeof p.locationDesc === 'string' && /^US-[A-Z]{2}$/.test(p.locationDesc) &&
+                !/trail/i.test(p.parktypeDesc || '');
+        }
+
+        // Group parks whose screen positions fall within DOT_CLUSTER_PX of an
+        // existing dot; each dot sits at the average of its parks.
+        function clusterParks(points, clusterUnits) {
+            const clusters = [];
+            points.forEach(pt => {
+                let best = null;
+                let bestDist = clusterUnits;
+                clusters.forEach(c => {
+                    const d = Math.hypot(c.x - pt.x, c.y - pt.y);
+                    if (d <= bestDist) { best = c; bestDist = d; }
+                });
+                if (best) {
+                    best.members.push(pt);
+                    best.x = best.members.reduce((sum, m) => sum + m.x, 0) / best.members.length;
+                    best.y = best.members.reduce((sum, m) => sum + m.y, 0) / best.members.length;
+                } else {
+                    clusters.push({ x: pt.x, y: pt.y, members: [pt] });
+                }
+            });
+            return clusters;
+        }
+
+        // Label spots around a city square, in screen px: [dx, dy, anchor].
+        const LABEL_SPOTS = {
+            right: [5, 3.5, 'start'],
+            left: [-5, 3.5, 'end'],
+            below: [0, 13, 'middle'],
+            above: [0, -6, 'middle']
+        };
+
+        // Draw city squares and labels. Each label takes the first spot
+        // (right, left, below, above) that covers the fewest park dots and
+        // earlier labels, unless the city names a spot itself.
+        function drawCities(svg, cities, clusters, unit) {
+            const layer = document.createElementNS(SVG_NS, 'g');
+            svg.appendChild(layer);   // attached first so label widths can be measured
+            const size = 4 * unit;
+            const pad = DOT_RADIUS_PX * unit;
+            const placed = [];
+
+            cities.forEach(city => {
+                const mark = document.createElementNS(SVG_NS, 'rect');
+                mark.setAttribute('class', 'city-mark');
+                mark.setAttribute('x', (city.x - size / 2).toFixed(2));
+                mark.setAttribute('y', (city.y - size / 2).toFixed(2));
+                mark.setAttribute('width', size.toFixed(3));
+                mark.setAttribute('height', size.toFixed(3));
+                mark.setAttribute('stroke-width', (0.75 * unit).toFixed(3));
+                layer.appendChild(mark);
+
+                const label = document.createElementNS(SVG_NS, 'text');
+                label.setAttribute('class', 'city-label');
+                // Inline style: the board's `svg text` rule would override an attribute
+                label.style.fontSize = (10 * unit).toFixed(3) + 'px';
+                label.setAttribute('stroke-width', (2 * unit).toFixed(3));
+                label.textContent = city.name;
+                layer.appendChild(label);
+
+                const width = label.getComputedTextLength() || city.name.length * 5.5 * unit;
+                const height = 9 * unit;
+                const boxFor = spot => {
+                    const [dx, dy, anchor] = LABEL_SPOTS[spot];
+                    const x = city.x + dx * unit;
+                    const left = anchor === 'start' ? x : (anchor === 'end' ? x - width : x - width / 2);
+                    const bottom = city.y + dy * unit + 2 * unit;
+                    return { x: x, y: city.y + dy * unit, anchor: anchor,
+                        x1: left, x2: left + width, y1: bottom - height, y2: bottom };
+                };
+                const hits = b =>
+                    clusters.filter(c => c.x > b.x1 - pad && c.x < b.x2 + pad &&
+                        c.y > b.y1 - pad && c.y < b.y2 + pad).length +
+                    10 * placed.filter(o => o.x1 < b.x2 && o.x2 > b.x1 && o.y1 < b.y2 && o.y2 > b.y1).length;
+
+                const spots = city.place ? [city.place] : Object.keys(LABEL_SPOTS);
+                let best = null;
+                let bestHits = Infinity;
+                spots.forEach(spot => {
+                    const b = boxFor(spot);
+                    const h = hits(b);
+                    if (h < bestHits) { best = b; bestHits = h; }
+                });
+
+                label.setAttribute('x', best.x.toFixed(2));
+                label.setAttribute('y', best.y.toFixed(2));
+                label.setAttribute('text-anchor', best.anchor);
+                placed.push(best);
+            });
+        }
+
+        // Dot tier follows the map: new state > fresh park > everything else.
+        const TIER_RANK = { new: 2, fresh: 1, old: 0 };
+
+        function drawOverlays(parks, activations, newStatesSet) {
+            const svg = document.querySelector('#map-container svg');
+            if (!svg) return;
+
+            // SVG user units per screen pixel, so dot size, stroke and the
+            // clustering distance are all in real screen pixels.
+            const viewWidth = (svg.viewBox && svg.viewBox.baseVal && svg.viewBox.baseVal.width) || MAP.width;
+            const shownWidth = svg.getBoundingClientRect().width || 1004;
+            const unit = viewWidth / shownWidth;
+
+            if (!parks) return;
+
+            // Latest activation date per park reference
+            const lastByRef = {};
+            activations.forEach(a => {
+                const d = parseLocalDate(a.date);
+                if (a.reference && d && (!lastByRef[a.reference] || d > lastByRef[a.reference])) {
+                    lastByRef[a.reference] = d;
+                }
+            });
+
+            const plotted = parks
+                .filter(isPlottablePark)
+                .sort((a, b) => a.reference.localeCompare(b.reference));
+
+            const points = plotted.map(p => {
+                const stateCode = p.locationDesc.slice(3);
+                const [x, y] = project(p.latitude, p.longitude, stateCode);
+                const tier = newStatesSet.has(stateCode) ? 'new'
+                    : (isFreshDate(lastByRef[p.reference]) ? 'fresh' : 'old');
+                return { x, y, tier };
+            });
+            const clusters = clusterParks(points, DOT_CLUSTER_PX * unit);
+
+            // Cities go in first, so park dots sit on top of them.
+            if (SHOW_CITIES) {
+                drawCities(svg, pickCities(plotted, unit), clusters, unit);
+            }
+
+            const dotLayer = document.createElementNS(SVG_NS, 'g');
+            clusters.forEach(c => {
+                const tier = c.members.reduce((t, m) => TIER_RANK[m.tier] > TIER_RANK[t] ? m.tier : t, 'old');
+                const strength = Math.min(1, (c.members.length - 1) / (DOT_FULL_AT - 1));
+                const dot = document.createElementNS(SVG_NS, 'circle');
+                dot.setAttribute('class', 'park-dot ' + tier);
+                dot.setAttribute('cx', c.x.toFixed(2));
+                dot.setAttribute('cy', c.y.toFixed(2));
+                dot.setAttribute('r', (DOT_RADIUS_PX * unit).toFixed(3));
+                dot.setAttribute('stroke-width', (1 * unit).toFixed(3));
+                dot.setAttribute('fill-opacity', (DOT_MIN_OPACITY + (1 - DOT_MIN_OPACITY) * strength).toFixed(2));
+                dotLayer.appendChild(dot);
+            });
+            svg.appendChild(dotLayer);
+        }
+
+        // ============ Load and display ============
+        // Last good data, kept on screen when a later refresh fails.
+        let lastActivations = null;
+        let lastParks = null;
+        let lastSuccess = null;
+
+        async function fetchJSON(url, what) {
+            const response = await fetchFresh(url);
+            if (!response.ok) {
+                throw new Error(`Failed to fetch ${what}: ${response.status} ${response.statusText}`);
+            }
+            return response.json();
+        }
+
+        function showError(message) {
+            const el = document.getElementById('error');
+            el.textContent = `Error: ${message}`;
+            el.style.display = 'block';
+        }
+
+        function hideError() {
+            document.getElementById('error').style.display = 'none';
+        }
+
+        function renderFooter(refreshFailed) {
+            const footer = document.getElementById('footer');
+            if (!lastSuccess) {
+                footer.textContent = 'Data load failed';
+                return;
+            }
+            // Footer timestamp doubles as a health check
+            let text = 'Data loaded ' + formatStamp(lastSuccess);
+            if (refreshFailed) {
+                const minutes = Math.round((Date.now() - lastSuccess) / 60000);
+                text += ` · update failed, showing data from ${minutes} min ago`;
+            }
+            footer.textContent = text;
+        }
+
+        async function render(activations, parks) {
+            const mostRecentByState = getMostRecentActivationByState(activations);
+            const firstByState = getFirstActivationByState(activations);
+
+            const activatedStates = [...new Set(
+                activations
+                    .filter(a => a.location && a.location.startsWith('US-'))
+                    .map(a => a.location.split('-')[1])
+            )];
+
+            const newStates = Object.keys(firstByState)
+                .filter(s => isFreshDate(firstByState[s]));
+            const newStatesSet = new Set(newStates);
+
+            // Fresh excludes new so the map layers stay mutually exclusive
+            const freshStates = Object.keys(mostRecentByState)
+                .filter(s => isFreshDate(mostRecentByState[s]) && !newStatesSet.has(s));
+
+            const uniqueParks = new Set(
+                activations.filter(a => a.reference).map(a => a.reference)
+            );
+
+            const stateStats = getStateStats(activations, mostRecentByState, firstByState);
+
+            // Overall stats + progress. Fresh stat counts every state with
+            // recent activity, new included, so the number stays intuitive.
+            const statesCount = activatedStates.length;
+            const progressPercent = ((statesCount / TOTAL_STATES) * 100).toFixed(0);
+
+            document.getElementById('stat-states').textContent = statesCount;
+            document.getElementById('stat-total').textContent = activations.length;
+            document.getElementById('stat-parks').textContent = uniqueParks.size;
+            document.getElementById('stat-fresh').textContent =
+                freshStates.length + newStates.length;
+            document.getElementById('progressPercent').textContent = `${progressPercent}%`;
+            document.getElementById('progressFill').style.width = `${progressPercent}%`;
+            document.getElementById('progressDetail').textContent =
+                `${statesCount} of ${TOTAL_STATES} States Activated`;
+
+            populateStateGrids(stateStats);
+            populateRecentList(activations, newStatesSet);
+            await loadSVGMap(activatedStates, freshStates, newStates);
+
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('content').style.display = 'flex';
+
+            // Drawn once the map is visible, so its on-screen size is known
+            drawOverlays(parks, activations, newStatesSet);
+        }
+
+        async function loadData() {
+            // Both files load in parallel; the parks file is optional.
+            const [activationsResult, parksResult] = await Promise.allSettled([
+                fetchJSON(JSON_URL, 'JSON data'),
+                fetchJSON(PARKS_URL, 'park locations')
+            ]);
+
+            let refreshFailed = false;
+            if (activationsResult.status === 'fulfilled' && Array.isArray(activationsResult.value)) {
+                lastActivations = activationsResult.value;
+            } else {
+                refreshFailed = true;
+            }
+
+            let parksError = null;
+            if (parksResult.status === 'fulfilled' && Array.isArray(parksResult.value)) {
+                lastParks = parksResult.value;
+            } else if (!lastParks) {
+                parksError = parksResult.status === 'rejected'
+                    ? parksResult.reason.message : 'park locations file is not a list';
+            }
+
+            if (!lastActivations) {
+                // Nothing to show yet: same error display as the original board
+                const reason = activationsResult.status === 'rejected'
+                    ? activationsResult.reason : new Error('activation data is not a list');
+                console.error('Error loading data:', reason);
+                document.getElementById('loading').style.display = 'none';
+                showError(reason.message);
+                renderFooter(false);
+                return;
+            }
+
+            try {
+                await render(lastActivations, lastParks);
+                if (!refreshFailed) lastSuccess = new Date();
+                // Board still renders (states only) if the parks file never loaded
+                if (parksError) {
+                    console.error('Error loading park locations:', parksError);
+                    showError(`Park dots unavailable: ${parksError}`);
+                } else {
+                    hideError();
+                }
+                renderFooter(refreshFailed);
+            } catch (error) {
+                console.error('Error loading data:', error);
+                if (!lastSuccess) {
+                    document.getElementById('loading').style.display = 'none';
+                    showError(error.message);
+                }
+                renderFooter(true);
+            }
+        }
+
+        // Start after the page has loaded so fetching never delays it,
+        // then keep refreshing while the board sits in the loop.
+        window.addEventListener('load', () => {
+            loadData();
+            setInterval(loadData, REFRESH_MINUTES * 60 * 1000);
+        });
+    </script>
+</body>
+</html>
