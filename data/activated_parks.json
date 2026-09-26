@@ -1,0 +1,986 @@
+[
+    {
+        "reference": "CA-4865",
+        "name": "Fort Malden",
+        "latitude": 42.108,
+        "longitude": -83.1126,
+        "locationDesc": "CA-ON",
+        "parktypeDesc": "National Historic Site"
+    },
+    {
+        "reference": "CA-5290",
+        "name": "Amherstburg First Baptist Church",
+        "latitude": 42.1027,
+        "longitude": -83.1057,
+        "locationDesc": "CA-ON",
+        "parktypeDesc": "National Historic Site"
+    },
+    {
+        "reference": "CA-5308",
+        "name": "Hough House",
+        "latitude": 42.1072,
+        "longitude": -83.1135,
+        "locationDesc": "CA-ON",
+        "parktypeDesc": "National Historic Site"
+    },
+    {
+        "reference": "CA-5669",
+        "name": "Holiday Beach",
+        "latitude": 42.0423,
+        "longitude": -83.0348,
+        "locationDesc": "CA-ON",
+        "parktypeDesc": "Conservation Area"
+    },
+    {
+        "reference": "CA-5947",
+        "name": "Devonwood",
+        "latitude": 42.262,
+        "longitude": -82.9807,
+        "locationDesc": "CA-ON",
+        "parktypeDesc": "Conservation Area"
+    },
+    {
+        "reference": "US-0030",
+        "name": "Grand Canyon",
+        "latitude": 36.1044,
+        "longitude": -112.003,
+        "locationDesc": "US-AZ",
+        "parktypeDesc": "National Park"
+    },
+    {
+        "reference": "US-0059",
+        "name": "Rocky Mountain",
+        "latitude": 40.3535,
+        "longitude": -105.649,
+        "locationDesc": "US-CO",
+        "parktypeDesc": "National Park"
+    },
+    {
+        "reference": "US-0225",
+        "name": "Rocky Flats",
+        "latitude": 39.8773,
+        "longitude": -105.19,
+        "locationDesc": "US-CO",
+        "parktypeDesc": "National Wildlife Refuge"
+    },
+    {
+        "reference": "US-0249",
+        "name": "Merritt Island",
+        "latitude": 28.642,
+        "longitude": -80.7361,
+        "locationDesc": "US-FL",
+        "parktypeDesc": "National Wildlife Refuge"
+    },
+    {
+        "reference": "US-0350",
+        "name": "Michigan",
+        "latitude": 42.238,
+        "longitude": -84.238,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "Wetland Management District"
+    },
+    {
+        "reference": "US-0660",
+        "name": "Canaveral",
+        "latitude": 28.8703,
+        "longitude": -80.8384,
+        "locationDesc": "US-FL",
+        "parktypeDesc": "National Seashore"
+    },
+    {
+        "reference": "US-0714",
+        "name": "River Raisin",
+        "latitude": 41.9108,
+        "longitude": -83.3767,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "National Battlefield"
+    },
+    {
+        "reference": "US-0732",
+        "name": "Dayton Aviation Heritage",
+        "latitude": 39.7999,
+        "longitude": -84.0663,
+        "locationDesc": "US-OH",
+        "parktypeDesc": "National Historical Park"
+    },
+    {
+        "reference": "US-10063",
+        "name": "Crystal Waters",
+        "latitude": 42.0714,
+        "longitude": -83.5684,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-10088",
+        "name": "Headquarters Lake Flooding",
+        "latitude": 44.5426,
+        "longitude": -85.3707,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Wildlife Area"
+    },
+    {
+        "reference": "US-10231",
+        "name": "Limberlost Swamp",
+        "latitude": 40.5706,
+        "longitude": -84.973,
+        "locationDesc": "US-IN",
+        "parktypeDesc": "State Nature Preserve"
+    },
+    {
+        "reference": "US-10232",
+        "name": "White Oak Cemetery",
+        "latitude": 40.5637,
+        "longitude": -85.034,
+        "locationDesc": "US-IN",
+        "parktypeDesc": "State Nature Preserve"
+    },
+    {
+        "reference": "US-1061",
+        "name": "Lost Dutchman",
+        "latitude": 33.4639,
+        "longitude": -111.482,
+        "locationDesc": "US-AZ",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1210",
+        "name": "Boyd Lake",
+        "latitude": 40.4298,
+        "longitude": -105.045,
+        "locationDesc": "US-CO",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1219",
+        "name": "Golden Gate Canyon",
+        "latitude": 39.8414,
+        "longitude": -105.42,
+        "locationDesc": "US-CO",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-12787",
+        "name": "Bear Creek",
+        "latitude": 44.2925,
+        "longitude": -86.1177,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "National Wild and Scenic River"
+    },
+    {
+        "reference": "US-12792",
+        "name": "Manistee",
+        "latitude": 44.2672,
+        "longitude": -86.0154,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "National Wild and Scenic River"
+    },
+    {
+        "reference": "US-12795",
+        "name": "Pere Marquette",
+        "latitude": 43.9322,
+        "longitude": -86.4165,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "National Wild and Scenic River"
+    },
+    {
+        "reference": "US-13179",
+        "name": "Pere Marquette",
+        "latitude": 43.8767,
+        "longitude": -85.5093,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Trail"
+    },
+    {
+        "reference": "US-13182",
+        "name": "Polly Ann",
+        "latitude": 42.8396,
+        "longitude": -83.1818,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Trail"
+    },
+    {
+        "reference": "US-1387",
+        "name": "Moraine",
+        "latitude": 40.9437,
+        "longitude": -80.0968,
+        "locationDesc": "US-PA",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1401",
+        "name": "Point",
+        "latitude": 40.4407,
+        "longitude": -80.0096,
+        "locationDesc": "US-PA",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1487",
+        "name": "Belle Isle",
+        "latitude": 42.3433,
+        "longitude": -82.9743,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1495",
+        "name": "Dodge #4",
+        "latitude": 42.6151,
+        "longitude": -83.3701,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1503",
+        "name": "Hartwick Pines",
+        "latitude": 44.7432,
+        "longitude": -84.6502,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1517",
+        "name": "Mackinac Island",
+        "latitude": 45.8674,
+        "longitude": -84.6222,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1518",
+        "name": "Maybury",
+        "latitude": 42.4327,
+        "longitude": -83.5375,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1523",
+        "name": "Mitchell",
+        "latitude": 44.2384,
+        "longitude": -85.4554,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1530",
+        "name": "Orchard Beach",
+        "latitude": 44.2788,
+        "longitude": -86.3144,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1535",
+        "name": "Port Crescent",
+        "latitude": 43.9982,
+        "longitude": -83.0817,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1537",
+        "name": "Seven Lakes",
+        "latitude": 42.8213,
+        "longitude": -83.6483,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1539",
+        "name": "Sleeper",
+        "latitude": 43.9736,
+        "longitude": -83.2221,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1540",
+        "name": "Sleepy Hollow",
+        "latitude": 42.941,
+        "longitude": -84.4042,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1542",
+        "name": "Sterling",
+        "latitude": 41.9212,
+        "longitude": -83.3423,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1555",
+        "name": "White Pine Trail",
+        "latitude": 43.3974,
+        "longitude": -85.4705,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1557",
+        "name": "Wilson",
+        "latitude": 44.0294,
+        "longitude": -84.8037,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1770",
+        "name": "Lewis and Clark",
+        "latitude": 39.5397,
+        "longitude": -95.0587,
+        "locationDesc": "US-MO",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1940",
+        "name": "Caesar Creek",
+        "latitude": 39.519,
+        "longitude": -84.0245,
+        "locationDesc": "US-OH",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1943",
+        "name": "Cowan Lake",
+        "latitude": 39.3816,
+        "longitude": -83.9004,
+        "locationDesc": "US-OH",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1972",
+        "name": "Little Miami",
+        "latitude": 39.5249,
+        "longitude": -84.0799,
+        "locationDesc": "US-OH",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1976",
+        "name": "Maumee Bay",
+        "latitude": 41.6789,
+        "longitude": -83.374,
+        "locationDesc": "US-OH",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-1998",
+        "name": "Van Buren",
+        "latitude": 41.1348,
+        "longitude": -83.6373,
+        "locationDesc": "US-OH",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-3305",
+        "name": "Bay City",
+        "latitude": 43.6673,
+        "longitude": -83.9058,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Recreation Area"
+    },
+    {
+        "reference": "US-3310",
+        "name": "Fort Custer",
+        "latitude": 42.317,
+        "longitude": -85.3401,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Recreation Area"
+    },
+    {
+        "reference": "US-3312",
+        "name": "Highland",
+        "latitude": 42.6332,
+        "longitude": -83.5658,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Recreation Area"
+    },
+    {
+        "reference": "US-3313",
+        "name": "Holly",
+        "latitude": 42.8163,
+        "longitude": -83.5398,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Recreation Area"
+    },
+    {
+        "reference": "US-3315",
+        "name": "Island Lake",
+        "latitude": 42.5056,
+        "longitude": -83.7076,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Recreation Area"
+    },
+    {
+        "reference": "US-3320",
+        "name": "Metamora-Hadley",
+        "latitude": 42.9451,
+        "longitude": -83.3588,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Recreation Area"
+    },
+    {
+        "reference": "US-3321",
+        "name": "Ortonville",
+        "latitude": 42.8854,
+        "longitude": -83.4039,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Recreation Area"
+    },
+    {
+        "reference": "US-3322",
+        "name": "Pinckney",
+        "latitude": 42.4071,
+        "longitude": -83.9608,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Recreation Area"
+    },
+    {
+        "reference": "US-3323",
+        "name": "Pontiac Lake",
+        "latitude": 42.6735,
+        "longitude": -83.4416,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Recreation Area"
+    },
+    {
+        "reference": "US-3324",
+        "name": "Proud Lake",
+        "latitude": 42.5702,
+        "longitude": -83.5597,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Recreation Area"
+    },
+    {
+        "reference": "US-3327",
+        "name": "Sanilac Petroglyphs",
+        "latitude": 43.6565,
+        "longitude": -83.0178,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Park"
+    },
+    {
+        "reference": "US-3329",
+        "name": "Tippy Dam",
+        "latitude": 44.2599,
+        "longitude": -85.9425,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Recreation Area"
+    },
+    {
+        "reference": "US-3331",
+        "name": "Waterloo",
+        "latitude": 42.3332,
+        "longitude": -84.1068,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Recreation Area"
+    },
+    {
+        "reference": "US-3333",
+        "name": "Wetzel",
+        "latitude": 42.7339,
+        "longitude": -82.8474,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Recreation Area"
+    },
+    {
+        "reference": "US-3383",
+        "name": "Bald Mountain",
+        "latitude": 42.7331,
+        "longitude": -83.2415,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Recreation Area"
+    },
+    {
+        "reference": "US-3384",
+        "name": "Brighton",
+        "latitude": 42.5103,
+        "longitude": -83.8631,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Recreation Area"
+    },
+    {
+        "reference": "US-3514",
+        "name": "Fort Miamis Fallen Timbers Battlefield",
+        "latitude": 41.5725,
+        "longitude": -83.6261,
+        "locationDesc": "US-OH",
+        "parktypeDesc": "National Historic Site"
+    },
+    {
+        "reference": "US-3779",
+        "name": "Big Bone Lick",
+        "latitude": 38.8869,
+        "longitude": -84.7478,
+        "locationDesc": "US-KY",
+        "parktypeDesc": "State Historic Site"
+    },
+    {
+        "reference": "US-4239",
+        "name": "North Country Trail",
+        "latitude": 47.5195,
+        "longitude": -101.453,
+        "locationDesc": "US-MI,US-MN,US-ND,US-NY,US-OH,US-PA,US-VT,US-WI",
+        "parktypeDesc": "National Scenic Trail"
+    },
+    {
+        "reference": "US-4428",
+        "name": "Coconino",
+        "latitude": 34.9266,
+        "longitude": -111.554,
+        "locationDesc": "US-AZ",
+        "parktypeDesc": "National Forest"
+    },
+    {
+        "reference": "US-4432",
+        "name": "Tonto",
+        "latitude": 34.3335,
+        "longitude": -110.873,
+        "locationDesc": "US-AZ",
+        "parktypeDesc": "National Forest"
+    },
+    {
+        "reference": "US-4559",
+        "name": "Florida Trail",
+        "latitude": 28.2875,
+        "longitude": -81.4092,
+        "locationDesc": "US-FL",
+        "parktypeDesc": "National Scenic Trail"
+    },
+    {
+        "reference": "US-4564",
+        "name": "Potomac Heritage Trail",
+        "latitude": 38.6148,
+        "longitude": -77.2748,
+        "locationDesc": "US-DC,US-MD,US-PA,US-VA",
+        "parktypeDesc": "National Scenic Trail"
+    },
+    {
+        "reference": "US-4583",
+        "name": "Manistee",
+        "latitude": 43.9429,
+        "longitude": -85.8942,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "National Forest"
+    },
+    {
+        "reference": "US-4591",
+        "name": "World War I Museum",
+        "latitude": 39.0804,
+        "longitude": -94.5862,
+        "locationDesc": "US-MO",
+        "parktypeDesc": "National Memorial"
+    },
+    {
+        "reference": "US-4774",
+        "name": "Au Sable",
+        "latitude": 44.7903,
+        "longitude": -84.8364,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Forest"
+    },
+    {
+        "reference": "US-4779",
+        "name": "Pere Marquette",
+        "latitude": 43.9647,
+        "longitude": -85.7985,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Forest"
+    },
+    {
+        "reference": "US-6324",
+        "name": "Split Oak Forest",
+        "latitude": 28.3534,
+        "longitude": -81.2111,
+        "locationDesc": "US-FL",
+        "parktypeDesc": "Wildlife Area"
+    },
+    {
+        "reference": "US-6329",
+        "name": "Tosohatchee",
+        "latitude": 28.4988,
+        "longitude": -80.9796,
+        "locationDesc": "US-FL",
+        "parktypeDesc": "Wildlife Management Area"
+    },
+    {
+        "reference": "US-6412",
+        "name": "Aiea Bay",
+        "latitude": 21.3775,
+        "longitude": -157.936,
+        "locationDesc": "US-HI",
+        "parktypeDesc": "State Recreation Area"
+    },
+    {
+        "reference": "US-6417",
+        "name": "Wahiawa Freshwater",
+        "latitude": 21.4922,
+        "longitude": -158.025,
+        "locationDesc": "US-HI",
+        "parktypeDesc": "State Recreation Area"
+    },
+    {
+        "reference": "US-6616",
+        "name": "Almer Township",
+        "latitude": 43.524,
+        "longitude": -83.4331,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6634",
+        "name": "Brookfield Township",
+        "latitude": 43.7173,
+        "longitude": -83.2372,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6635",
+        "name": "Brookfield Township  II",
+        "latitude": 43.7527,
+        "longitude": -83.2576,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6636",
+        "name": "Brownstown Prairie",
+        "latitude": 42.1668,
+        "longitude": -83.2876,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Wildlife Area"
+    },
+    {
+        "reference": "US-6641",
+        "name": "Cass City",
+        "latitude": 43.6304,
+        "longitude": -83.1433,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6645",
+        "name": "Clark Lake",
+        "latitude": 43.3549,
+        "longitude": -83.1849,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6646",
+        "name": "Columbia Township",
+        "latitude": 43.64,
+        "longitude": -83.4075,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6651",
+        "name": "Crow Island",
+        "latitude": 43.5005,
+        "longitude": -83.8929,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6654",
+        "name": "Davisburg",
+        "latitude": 42.7553,
+        "longitude": -83.5223,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6657",
+        "name": "Deford",
+        "latitude": 43.4849,
+        "longitude": -83.2251,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6658",
+        "name": "Denmark Township",
+        "latitude": 43.475,
+        "longitude": -83.6217,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6668",
+        "name": "Elmwood Township",
+        "latitude": 43.6205,
+        "longitude": -83.2663,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6672",
+        "name": "Fish Point",
+        "latitude": 43.7037,
+        "longitude": -83.488,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Wildlife Area"
+    },
+    {
+        "reference": "US-6680",
+        "name": "Gagetown",
+        "latitude": 43.6619,
+        "longitude": -83.2162,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6694",
+        "name": "Gratiot-Saginaw",
+        "latitude": 43.2439,
+        "longitude": -84.4084,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6705",
+        "name": "Holly Wildlife Unit of Holly",
+        "latitude": 42.8665,
+        "longitude": -83.5424,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Recreation Area"
+    },
+    {
+        "reference": "US-6706",
+        "name": "Horseshoe Lake",
+        "latitude": 42.8686,
+        "longitude": -83.2697,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6717",
+        "name": "Lame Duck Area",
+        "latitude": 44.0974,
+        "longitude": -84.237,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6726",
+        "name": "Malan Waterfowl",
+        "latitude": 42.3986,
+        "longitude": -84.1781,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "National Wildlife Management Area"
+    },
+    {
+        "reference": "US-6729",
+        "name": "Gratiot-Saginaw Connector",
+        "latitude": 43.1711,
+        "longitude": -84.4644,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6730",
+        "name": "Maple River",
+        "latitude": 43.1596,
+        "longitude": -84.5361,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6731",
+        "name": "Mark Knee Memorial",
+        "latitude": 43.9955,
+        "longitude": -85.3844,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6736",
+        "name": "Minden City",
+        "latitude": 43.6128,
+        "longitude": -82.9168,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6737",
+        "name": "Molasses River Flooding No 1",
+        "latitude": 44.0976,
+        "longitude": -84.2126,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "Wildlife Management Area"
+    },
+    {
+        "reference": "US-6742",
+        "name": "Muskrat Lake",
+        "latitude": 42.9142,
+        "longitude": -84.5903,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6749",
+        "name": "Oliver Township",
+        "latitude": 43.8184,
+        "longitude": -83.1212,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6766",
+        "name": "Quanicassee",
+        "latitude": 43.6019,
+        "longitude": -83.7199,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Wildlife Area"
+    },
+    {
+        "reference": "US-6771",
+        "name": "Rose Lake",
+        "latitude": 42.8067,
+        "longitude": -84.3737,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6772",
+        "name": "Rush Lake",
+        "latitude": 43.9744,
+        "longitude": -83.1906,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6777",
+        "name": "Sanilac",
+        "latitude": 43.6339,
+        "longitude": -83.0369,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6799",
+        "name": "Tuscola",
+        "latitude": 43.4239,
+        "longitude": -83.3735,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6801",
+        "name": "Vassar",
+        "latitude": 43.4184,
+        "longitude": -83.4637,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6802",
+        "name": "Verona",
+        "latitude": 43.7848,
+        "longitude": -82.8812,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6804",
+        "name": "Waterloo Unit",
+        "latitude": 42.3618,
+        "longitude": -84.192,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Game Land"
+    },
+    {
+        "reference": "US-6807",
+        "name": "Wildfowl Bay",
+        "latitude": 43.8284,
+        "longitude": -83.3918,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Wildlife Area"
+    },
+    {
+        "reference": "US-6818",
+        "name": "Mackinac Island",
+        "latitude": 45.8495,
+        "longitude": -84.6164,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Harbor"
+    },
+    {
+        "reference": "US-6819",
+        "name": "Port Austin",
+        "latitude": 44.0475,
+        "longitude": -82.997,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "State Harbor"
+    },
+    {
+        "reference": "US-7713",
+        "name": "Loblolly Marsh",
+        "latitude": 40.5572,
+        "longitude": -85.0305,
+        "locationDesc": "US-IN",
+        "parktypeDesc": "State Nature Preserve"
+    },
+    {
+        "reference": "US-7847",
+        "name": "Caesar Creek Gorge",
+        "latitude": 39.4917,
+        "longitude": -84.1016,
+        "locationDesc": "US-OH",
+        "parktypeDesc": "State Nature Preserve"
+    },
+    {
+        "reference": "US-7849",
+        "name": "Spring Valley",
+        "latitude": 39.5727,
+        "longitude": -84.0109,
+        "locationDesc": "US-OH",
+        "parktypeDesc": "State Wildlife Area"
+    },
+    {
+        "reference": "US-7850",
+        "name": "Caesar Creek Lake",
+        "latitude": 39.5007,
+        "longitude": -84.0546,
+        "locationDesc": "US-OH",
+        "parktypeDesc": "State Wildlife Area"
+    },
+    {
+        "reference": "US-7854",
+        "name": "Molasses River Flooding No 2",
+        "latitude": 44.0929,
+        "longitude": -84.2363,
+        "locationDesc": "US-MI",
+        "parktypeDesc": "Wildlife Management Area"
+    },
+    {
+        "reference": "US-7867",
+        "name": "Benedictine Bottoms",
+        "latitude": 39.5939,
+        "longitude": -95.0804,
+        "locationDesc": "US-KS",
+        "parktypeDesc": "State Wildlife Area"
+    },
+    {
+        "reference": "US-9402",
+        "name": "Culberson Woods",
+        "latitude": 39.3691,
+        "longitude": -83.9385,
+        "locationDesc": "US-OH",
+        "parktypeDesc": "State Nature Preserve"
+    },
+    {
+        "reference": "US-9411",
+        "name": "Halls Creek Woods",
+        "latitude": 39.3662,
+        "longitude": -84.1521,
+        "locationDesc": "US-OH",
+        "parktypeDesc": "State Nature Preserve"
+    }
+]
