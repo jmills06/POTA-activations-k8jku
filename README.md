@@ -4,7 +4,9 @@ A 1080x1920 portrait dashboard showing K8JKU's Parks on the Air activations
 across Michigan. Built for a Dakboard screen, but it is just a static page --
 open the URL in any browser.
 
-**Live URL:** https://jmills06.github.io/pota-activations-k8jku/
+**Live URL:** https://jmills06.github.io/POTA-activations-k8jku/
+
+The path is case-sensitive: use `POTA` in capitals, as in the repo name.
 
 ## Layout
 
@@ -13,8 +15,10 @@ open the URL in any browser.
 | `index.html` | The whole dashboard: map, stats, recent activations. No build step. |
 | `data/pota_activations.json` | K8JKU's activation log, refreshed daily. |
 | `data/Michigan_POTA_Parks.json` | All 371 Michigan POTA parks with coordinates, refreshed daily. |
-| `.github/workflows/download-json.yml` | Pulls both JSON files from the source bucket at 05:00 UTC and commits them. |
-| `.github/workflows/pages.yml` | Publishes the repo root to GitHub Pages on every push to `main`. |
+| `data/activated_parks.json` | Name, coordinates, location and park type for every park K8JKU has activated (any state or country). Built by `scripts/build_activated_parks.py`. |
+| `scripts/build_activated_parks.py` | Looks up new references from the activation log via `api.pota.app/park/<ref>`; existing entries are kept, failed lookups retry next run. |
+| `.github/workflows/download-json.yml` | Pulls both JSON files from the source bucket at 05:00 UTC, builds `activated_parks.json`, and commits them. |
+| `.github/workflows/pages.yml` | Publishes the repo root to GitHub Pages on every push to `main` and after each successful daily download. |
 
 The page fetches `data/*.json` from its own origin first and falls back to the
 Google Storage originals, so it still works opened directly from disk.
@@ -32,7 +36,10 @@ Google Storage originals, so it still works opened directly from disk.
 
 Pages has to be switched on once, in **Settings -> Pages -> Build and
 deployment -> Source: GitHub Actions**. After that every push to `main`
-(including the daily data commit) redeploys the site automatically.
+redeploys the site automatically. The daily data commit is pushed by the
+workflow's own token, which GitHub does not let trigger other workflows, so
+`pages.yml` also runs on `workflow_run` when the Daily JSON Downloader
+finishes successfully.
 
 ## Dakboard
 
