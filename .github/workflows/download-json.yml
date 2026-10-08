@@ -37,11 +37,20 @@ jobs:
         continue-on-error: true
         run: python3 scripts/build_activated_parks.py
 
+      - name: Build US and Canada parks
+        # Full US-/CA- park list from pota.app, for reuse in other projects.
+        # The script keeps the committed file unless the download passes its
+        # checks, and a failure here never blocks the commit below.
+        continue-on-error: true
+        run: python3 scripts/build_us_ca_parks.py
+
       - name: Commit and Push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/pota_activations.json data/Michigan_POTA_Parks.json
-          if [ -f data/activated_parks.json ]; then git add data/activated_parks.json; fi
+          for f in data/activated_parks.json data/us_ca_parks.json; do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
           git commit -m "Daily JSON update: $(date -u)" || echo "No changes to commit"
           git push
