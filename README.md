@@ -16,8 +16,10 @@ The path is case-sensitive: use `POTA` in capitals, as in the repo name.
 | `data/pota_activations.json` | K8JKU's activation log, refreshed daily. |
 | `data/Michigan_POTA_Parks.json` | All 371 Michigan POTA parks with coordinates, refreshed daily. |
 | `data/activated_parks.json` | Name, coordinates, location and park type for every park K8JKU has activated (any state or country). Built by `scripts/build_activated_parks.py`. |
+| `data/us_ca_parks.json` | Every US and Canada POTA park (reference, name, coordinates, grid, location, active flag), one park per line. Not used by the dashboard; kept for other projects. Built by `scripts/build_us_ca_parks.py`. |
+| `scripts/build_us_ca_parks.py` | Downloads POTA's full park list (`pota.app/all_parks_ext.csv`, falling back to `api.pota.app/park/all`) and keeps `US-` and `CA-` parks. The committed file is only replaced if both countries are present and neither shrinks by more than 10%. |
 | `scripts/build_activated_parks.py` | Looks up new references from the activation log via `api.pota.app/park/<ref>`; existing entries are kept, failed lookups retry next run. |
-| `.github/workflows/download-json.yml` | Pulls both JSON files from the source bucket at 05:00 UTC, builds `activated_parks.json`, and commits them. |
+| `.github/workflows/download-json.yml` | Pulls both JSON files from the source bucket at 05:00 UTC, builds `activated_parks.json` and `us_ca_parks.json`, and commits them. |
 | `.github/workflows/pages.yml` | Publishes the repo root to GitHub Pages on every push to `main` and after each successful daily download. |
 
 The page fetches `data/*.json` from its own origin first and falls back to the
