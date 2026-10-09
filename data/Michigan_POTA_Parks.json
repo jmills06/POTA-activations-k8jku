@@ -30,8 +30,8 @@
     {
         "reference": "US-0349",
         "name": "Kirtlands Warbler Wildlife Management Area",
-        "latitude": 44.66,
-        "longitude": -84.7142,
+        "latitude": 44.6097,
+        "longitude": -84.571,
         "locationDesc": "US-MI"
     },
     {
@@ -51,36 +51,36 @@
     {
         "reference": "US-0353",
         "name": "Shiawassee National Wildlife Refuge",
-        "latitude": 43.3377,
-        "longitude": -84.0268,
+        "latitude": 43.3219,
+        "longitude": -84.0331,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-0714",
         "name": "River Raisin National Battlefield",
-        "latitude": 41.9127,
-        "longitude": -83.3756,
+        "latitude": 41.9108,
+        "longitude": -83.3767,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-0740",
         "name": "Keweenaw National Historical Park",
-        "latitude": 47.1488,
-        "longitude": -88.5593,
+        "latitude": 47.2441,
+        "longitude": -88.4525,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-0766",
         "name": "Pictured Rocks National Lakeshore",
-        "latitude": 46.6776,
-        "longitude": -85.9731,
+        "latitude": 46.4925,
+        "longitude": -86.5503,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-0767",
         "name": "Sleeping Bear Dunes National Lakeshore",
-        "latitude": 44.8814,
-        "longitude": -86.0584,
+        "latitude": 44.8822,
+        "longitude": -86.0415,
         "locationDesc": "US-MI"
     },
     {
@@ -94,7 +94,7 @@
         "reference": "US-10087",
         "name": "Windsor Township State Game Land",
         "latitude": 42.6828,
-        "longitude": -84.6689,
+        "longitude": -84.6681,
         "locationDesc": "US-MI"
     },
     {
@@ -162,9 +162,9 @@
     },
     {
         "reference": "US-12787",
-        "name": "Bear National Wild and Scenic River",
-        "latitude": 44.2916,
-        "longitude": -86.114,
+        "name": "Bear Creek National Wild and Scenic River",
+        "latitude": 44.2925,
+        "longitude": -86.1177,
         "locationDesc": "US-MI"
     },
     {
@@ -184,8 +184,8 @@
     {
         "reference": "US-12790",
         "name": "East Branch of the Taquamenon National Wild and Scenic River",
-        "latitude": 46.3475,
-        "longitude": -84.9618,
+        "latitude": 46.3706,
+        "longitude": -85.0353,
         "locationDesc": "US-MI"
     },
     {
@@ -204,7 +204,7 @@
     },
     {
         "reference": "US-12793",
-        "name": "Ontonogan National Wild and Scenic River",
+        "name": "Ontonagon National Wild and Scenic River",
         "latitude": 46.3123,
         "longitude": -89.0536,
         "locationDesc": "US-MI"
@@ -217,10 +217,17 @@
         "locationDesc": "US-MI"
     },
     {
+        "reference": "US-12795",
+        "name": "Pere Marquette National Wild and Scenic River",
+        "latitude": 43.9322,
+        "longitude": -86.4165,
+        "locationDesc": "US-MI"
+    },
+    {
         "reference": "US-12796",
         "name": "Pine National Wild and Scenic River",
-        "latitude": 44.2029,
-        "longitude": -85.7997,
+        "latitude": 44.1795,
+        "longitude": -85.7605,
         "locationDesc": "US-MI"
     },
     {
@@ -263,6 +270,118 @@
         "name": "Norwich State Game Land",
         "latitude": 46.6215,
         "longitude": -89.3912,
+        "locationDesc": "US-MI"
+    },
+    {
+        "reference": "US-13166",
+        "name": "Black River National Recreation Area",
+        "latitude": 46.6644,
+        "longitude": -90.0463,
+        "locationDesc": "US-MI"
+    },
+    {
+        "reference": "US-13167",
+        "name": "Grand Island National Recreation Area",
+        "latitude": 46.5273,
+        "longitude": -86.677,
+        "locationDesc": "US-MI"
+    },
+    {
+        "reference": "US-13168",
+        "name": "Lake Michigan National Recreation Area",
+        "latitude": 44.1209,
+        "longitude": -86.425,
+        "locationDesc": "US-MI"
+    },
+    {
+        "reference": "US-13169",
+        "name": "Lake Ottawa National Recreation Area",
+        "latitude": 46.0772,
+        "longitude": -88.7586,
+        "locationDesc": "US-MI"
+    },
+    {
+        "reference": "US-13170",
+        "name": "Bay De Noc/Grand Island National Recreation Trail",
+        "latitude": 45.9315,
+        "longitude": -86.9187,
+        "locationDesc": "US-MI"
+    },
+    {
+        "reference": "US-13171",
+        "name": "Betsie Valley State Trail",
+        "latitude": 44.6279,
+        "longitude": -86.0952,
+        "locationDesc": "US-MI"
+    },
+    {
+        "reference": "US-13172",
+        "name": "North Central State Trail",
+        "latitude": 45.6356,
+        "longitude": -84.4873,
+        "locationDesc": "US-MI"
+    },
+    {
+        "reference": "US-13174",
+        "name": "North Eastern State Trail",
+        "latitude": 45.3356,
+        "longitude": -84.0584,
+        "locationDesc": "US-MI"
+    },
+    {
+        "reference": "US-13176",
+        "name": "North Western State Trail",
+        "latitude": 45.7804,
+        "longitude": -84.7306,
+        "locationDesc": "US-MI"
+    },
+    {
+        "reference": "US-13179",
+        "name": "Pere Marquette State Trail",
+        "latitude": 43.8767,
+        "longitude": -85.5093,
+        "locationDesc": "US-MI"
+    },
+    {
+        "reference": "US-13182",
+        "name": "Polly Ann State Trail",
+        "latitude": 42.8396,
+        "longitude": -83.1818,
+        "locationDesc": "US-MI"
+    },
+    {
+        "reference": "US-13184",
+        "name": "Iron Belle State Trail",
+        "latitude": 42.2749,
+        "longitude": -83.7009,
+        "locationDesc": "US-MI"
+    },
+    {
+        "reference": "US-13565",
+        "name": "Flint State Park",
+        "latitude": 43.0091,
+        "longitude": -83.7079,
+        "locationDesc": "US-MI"
+    },
+    {
+        "reference": "US-13566",
+        "name": "Houghton-Douglass Falls and Veterans Memorial Scenic Site",
+        "latitude": 47.2069,
+        "longitude": -88.431,
+        "locationDesc": "US-MI"
+    },
+    {
+        "reference": "US-13570",
+        "name": "Gladwin Field Trial Wildlife Management Area",
+        "latitude": 44.1402,
+        "longitude": -84.5728,
+        "locationDesc": "US-MI"
+    },
+    {
+        "reference": "US-13576",
+        "name": "Seneca State Game Land",
+        "latitude": 41.8284,
+        "longitude": -84.1904,
         "locationDesc": "US-MI"
     },
     {
@@ -907,7 +1026,7 @@
         "name": "Menominee River State Recreation Area",
         "latitude": 45.7597,
         "longitude": -87.939,
-        "locationDesc": "US-MI"
+        "locationDesc": "US-MI,US-WI"
     },
     {
         "reference": "US-3320",
@@ -1129,15 +1248,15 @@
     {
         "reference": "US-6613",
         "name": "Adams Township State Game Land",
-        "latitude": 41.9458,
-        "longitude": -84.5027,
+        "latitude": 41.9441,
+        "longitude": -84.5015,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6614",
         "name": "Addis Creek Flooding Wildlife Management Area",
-        "latitude": 44.5042,
-        "longitude": -84.9089,
+        "latitude": 44.514,
+        "longitude": -84.9042,
         "locationDesc": "US-MI"
     },
     {
@@ -1150,50 +1269,50 @@
     {
         "reference": "US-6616",
         "name": "Almer Township State Game Land",
-        "latitude": 43.5483,
-        "longitude": -83.403,
+        "latitude": 43.524,
+        "longitude": -83.4331,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6617",
         "name": "Au Train Basin Wildlife Management Area",
-        "latitude": 46.3006,
-        "longitude": -86.8655,
+        "latitude": 46.3042,
+        "longitude": -86.9101,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6618",
         "name": "Backus Creek State Game Land",
-        "latitude": 44.35,
-        "longitude": -84.5931,
+        "latitude": 44.3453,
+        "longitude": -84.5951,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6619",
         "name": "Bakale Wildlife Management Area",
-        "latitude": 43.0067,
-        "longitude": -85.9858,
+        "latitude": 43.0075,
+        "longitude": -85.9747,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6620",
         "name": "Baraga Plains Wildlife Management Area",
-        "latitude": 46.6244,
-        "longitude": -88.5808,
+        "latitude": 46.639,
+        "longitude": -88.5918,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6621",
         "name": "Barry State Game Land",
-        "latitude": 42.6031,
-        "longitude": -85.4322,
+        "latitude": 42.5948,
+        "longitude": -85.4416,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6622",
         "name": "Bear Creek Flooding Wildlife Management Area",
-        "latitude": 44.2355,
-        "longitude": -84.8447,
+        "latitude": 44.2415,
+        "longitude": -84.8492,
         "locationDesc": "US-MI"
     },
     {
@@ -1206,15 +1325,15 @@
     {
         "reference": "US-6624",
         "name": "Bentley Marsh Flooding Wildlife Management Area",
-        "latitude": 43.99,
-        "longitude": -84.1761,
+        "latitude": 43.9951,
+        "longitude": -84.1833,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6625",
         "name": "Betsie River State Game Land",
-        "latitude": 44.6114,
-        "longitude": -86.1922,
+        "latitude": 44.6194,
+        "longitude": -86.2188,
         "locationDesc": "US-MI"
     },
     {
@@ -1227,15 +1346,15 @@
     {
         "reference": "US-6627",
         "name": "Black Creek Flooding Wildlife Management Area",
-        "latitude": 46.2261,
-        "longitude": -85.7122,
+        "latitude": 46.2178,
+        "longitude": -85.7165,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6628",
         "name": "Blendon Township State Game Land",
-        "latitude": 42.8936,
-        "longitude": -85.9978,
+        "latitude": 42.8927,
+        "longitude": -86.0004,
         "locationDesc": "US-MI"
     },
     {
@@ -1255,8 +1374,8 @@
     {
         "reference": "US-6631",
         "name": "Blue Bill Creek State Game Land",
-        "latitude": 46.3072,
-        "longitude": -89.5486,
+        "latitude": 46.2956,
+        "longitude": -89.5696,
         "locationDesc": "US-MI"
     },
     {
@@ -1269,85 +1388,85 @@
     {
         "reference": "US-6633",
         "name": "Boyle Lake State Wildlife Area",
-        "latitude": 41.8792,
-        "longitude": -86.4539,
+        "latitude": 41.883,
+        "longitude": -86.4519,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6634",
         "name": "Brookfield Township State Game Land",
-        "latitude": 43.7161,
+        "latitude": 43.7173,
         "longitude": -83.2372,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6635",
         "name": "Brookfield Township  II State Game Land",
-        "latitude": 43.7531,
-        "longitude": -83.255,
+        "latitude": 43.7527,
+        "longitude": -83.2576,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6636",
         "name": "Brownstown Prairie State Wildlife Area",
-        "latitude": 42.1647,
-        "longitude": -83.2878,
+        "latitude": 42.1668,
+        "longitude": -83.2876,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6638",
         "name": "Cannon Creek Floodings Wildlife Management Area",
-        "latitude": 44.4967,
-        "longitude": -84.96,
+        "latitude": 44.4919,
+        "longitude": -84.9647,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6640",
         "name": "Cannonsburg State Game Land",
-        "latitude": 43.0381,
-        "longitude": -85.4919,
+        "latitude": 43.0426,
+        "longitude": -85.4933,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6641",
         "name": "Cass City State Game Land",
-        "latitude": 43.5872,
-        "longitude": -83.1155,
+        "latitude": 43.6304,
+        "longitude": -83.1433,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6642",
         "name": "Cedar River State Game Land",
-        "latitude": 45.4425,
-        "longitude": -87.4275,
+        "latitude": 45.4377,
+        "longitude": -87.4377,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6643",
         "name": "Chelsea State Game Land",
-        "latitude": 42.3333,
-        "longitude": -83.9744,
+        "latitude": 42.3288,
+        "longitude": -83.9685,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6644",
         "name": "Chesterfield Township State Game Land",
-        "latitude": 42.7042,
-        "longitude": -82.7975,
+        "latitude": 42.7044,
+        "longitude": -82.7983,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6645",
         "name": "Clark Lake State Game Land",
-        "latitude": 43.3544,
-        "longitude": -83.1886,
+        "latitude": 43.3549,
+        "longitude": -83.1849,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6646",
         "name": "Columbia Township State Game Land",
-        "latitude": 43.6405,
-        "longitude": -83.4025,
+        "latitude": 43.64,
+        "longitude": -83.4075,
         "locationDesc": "US-MI"
     },
     {
@@ -1360,64 +1479,64 @@
     {
         "reference": "US-6648",
         "name": "Cornish State Game Land",
-        "latitude": 42.1017,
-        "longitude": -85.8244,
+        "latitude": 42.1022,
+        "longitude": -85.8221,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6649",
         "name": "Cranberry Lake Wildlife Management Area",
-        "latitude": 45.98,
-        "longitude": -84.0036,
+        "latitude": 45.9782,
+        "longitude": -84.0044,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6650",
         "name": "Crane Pond State Game Land",
-        "latitude": 41.9281,
-        "longitude": -85.8483,
+        "latitude": 41.9137,
+        "longitude": -85.7963,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6651",
         "name": "Crow Island State Game Land",
-        "latitude": 43.4955,
-        "longitude": -83.8897,
+        "latitude": 43.5005,
+        "longitude": -83.8929,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6652",
         "name": "Cusino Wildlife Management Area",
-        "latitude": 46.3636,
-        "longitude": -86.4817,
+        "latitude": 46.3356,
+        "longitude": -86.4713,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6653",
         "name": "Dansville State Game Land",
-        "latitude": 42.5111,
-        "longitude": -84.3128,
+        "latitude": 42.5098,
+        "longitude": -84.3116,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6654",
         "name": "Davisburg State Game Land",
-        "latitude": 42.7547,
-        "longitude": -83.5228,
+        "latitude": 42.7553,
+        "longitude": -83.5223,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6655",
         "name": "Dead Stream Flooding Wildlife Management Area",
-        "latitude": 44.3794,
-        "longitude": -84.8447,
+        "latitude": 44.3601,
+        "longitude": -84.8589,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6657",
         "name": "Deford State Game Land",
-        "latitude": 43.5128,
-        "longitude": -83.2647,
+        "latitude": 43.4849,
+        "longitude": -83.2251,
         "locationDesc": "US-MI"
     },
     {
@@ -1430,8 +1549,8 @@
     {
         "reference": "US-6659",
         "name": "Denton Creek Flooding Wildlife Management Area",
-        "latitude": 44.2703,
-        "longitude": -84.5717,
+        "latitude": 44.2767,
+        "longitude": -84.5699,
         "locationDesc": "US-MI"
     },
     {
@@ -1444,15 +1563,15 @@
     {
         "reference": "US-6661",
         "name": "Dingman Marsh Flooding Wildlife Management Area",
-        "latitude": 45.7139,
-        "longitude": -84.685,
+        "latitude": 45.7169,
+        "longitude": -84.6847,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6662",
         "name": "Dog Lake Flooding Wildlife Management Area",
-        "latitude": 45.2889,
-        "longitude": -84.4036,
+        "latitude": 45.2883,
+        "longitude": -84.4103,
         "locationDesc": "US-MI"
     },
     {
@@ -1465,8 +1584,8 @@
     {
         "reference": "US-6664",
         "name": "Drummond Island State Game Land",
-        "latitude": 46.0564,
-        "longitude": -83.6142,
+        "latitude": 46.0422,
+        "longitude": -83.6586,
         "locationDesc": "US-MI"
     },
     {
@@ -1479,71 +1598,71 @@
     {
         "reference": "US-6666",
         "name": "Edger Waterfowl National Wildlife Management Area",
-        "latitude": 42.6475,
-        "longitude": -85.3861,
+        "latitude": 42.6485,
+        "longitude": -85.3828,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6667",
         "name": "Edmore State Game Land",
-        "latitude": 43.4369,
-        "longitude": -85.0725,
+        "latitude": 43.4661,
+        "longitude": -84.8861,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6668",
         "name": "Elmwood Township State Game Land",
-        "latitude": 43.6211,
-        "longitude": -83.2722,
+        "latitude": 43.6205,
+        "longitude": -83.2663,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6669",
         "name": "Erie State Game Land",
-        "latitude": 41.7492,
-        "longitude": -83.4717,
+        "latitude": 41.7434,
+        "longitude": -83.4755,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6670",
         "name": "Fabius State Game Land",
-        "latitude": 41.9036,
-        "longitude": -85.6614,
+        "latitude": 41.9034,
+        "longitude": -85.6625,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6672",
         "name": "Fish Point State Wildlife Area",
-        "latitude": 43.708,
-        "longitude": -83.5217,
+        "latitude": 43.7037,
+        "longitude": -83.488,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6673",
         "name": "Flat River State Game Land",
-        "latitude": 43.1278,
-        "longitude": -85.1944,
+        "latitude": 43.1453,
+        "longitude": -85.1047,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6674",
         "name": "Flynn Township State Game Land",
-        "latitude": 43.2892,
-        "longitude": -82.9194,
+        "latitude": 43.2854,
+        "longitude": -82.9429,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6675",
         "name": "Fraser State Game Land",
-        "latitude": 43.8239,
-        "longitude": -84.0283,
+        "latitude": 43.8236,
+        "longitude": -84.0262,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6676",
         "name": "Fraser Township  No.2 State Game Land",
-        "latitude": 43.7817,
-        "longitude": -84.0242,
+        "latitude": 43.7821,
+        "longitude": -84.025,
         "locationDesc": "US-MI"
     },
     {
@@ -1556,22 +1675,22 @@
     {
         "reference": "US-6678",
         "name": "Fuller Woods State Game Land",
-        "latitude": 42.275,
-        "longitude": -86.0361,
+        "latitude": 42.2727,
+        "longitude": -86.0413,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6679",
         "name": "Fulton State Game Land",
-        "latitude": 42.0997,
-        "longitude": -85.3189,
+        "latitude": 42.1148,
+        "longitude": -85.3177,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6680",
         "name": "Gagetown State Game Land",
-        "latitude": 43.6797,
-        "longitude": -83.2094,
+        "latitude": 43.6619,
+        "longitude": -83.2162,
         "locationDesc": "US-MI"
     },
     {
@@ -1584,50 +1703,50 @@
     {
         "reference": "US-6683",
         "name": "Gladwin State Game Land",
-        "latitude": 43.9686,
-        "longitude": -84.4864,
+        "latitude": 43.9687,
+        "longitude": -84.485,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6684",
         "name": "Gold Mine State Game Land",
-        "latitude": 46.2139,
-        "longitude": -88.7411,
+        "latitude": 46.2113,
+        "longitude": -88.7356,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6685",
         "name": "Goose Creek Flooding Wildlife Management Area",
-        "latitude": 44.7633,
-        "longitude": -84.8586,
+        "latitude": 44.7643,
+        "longitude": -84.8602,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6686",
         "name": "Goose Lake State Game Land",
-        "latitude": 42.2539,
-        "longitude": -84.1255,
+        "latitude": 42.2532,
+        "longitude": -84.1301,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6687",
         "name": "Gordon Guyer - Augusta Creek Wildlife Management Area",
-        "latitude": 42.3978,
-        "longitude": -85.358,
+        "latitude": 42.391,
+        "longitude": -85.3531,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6688",
         "name": "Gourdneck State Game Land",
-        "latitude": 42.1744,
-        "longitude": -85.6389,
+        "latitude": 42.1824,
+        "longitude": -85.6334,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6689",
         "name": "Grand Haven State Game Land",
-        "latitude": 43.0394,
-        "longitude": -86.1533,
+        "latitude": 43.0472,
+        "longitude": -86.1167,
         "locationDesc": "US-MI"
     },
     {
@@ -1654,57 +1773,57 @@
     {
         "reference": "US-6693",
         "name": "Grass Lake State Game Land",
-        "latitude": 42.2467,
-        "longitude": -84.2294,
+        "latitude": 42.248,
+        "longitude": -84.2311,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6694",
         "name": "Gratiot-Saginaw State Game Land",
-        "latitude": 43.2236,
-        "longitude": -84.3889,
+        "latitude": 43.2439,
+        "longitude": -84.4084,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6695",
         "name": "Greasy Creek State Game Land",
-        "latitude": 44.8797,
-        "longitude": -84.0414,
+        "latitude": 44.8943,
+        "longitude": -84.0347,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6696",
         "name": "Gregory State Game Land",
-        "latitude": 42.4942,
-        "longitude": -84.0475,
+        "latitude": 42.5,
+        "longitude": -84.0444,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6698",
         "name": "Halifax State Game Land",
-        "latitude": 46.5642,
-        "longitude": -85.3047,
+        "latitude": 46.5648,
+        "longitude": -85.3451,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6699",
         "name": "Hancock Creek Flooding Wildlife Management Area",
-        "latitude": 45.9206,
-        "longitude": -87.7539,
+        "latitude": 45.9184,
+        "longitude": -87.7564,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6701",
         "name": "Haymarsh Lake State Game Land",
-        "latitude": 43.7606,
-        "longitude": -85.3597,
+        "latitude": 43.7281,
+        "longitude": -85.3554,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6702",
         "name": "Hayward Lake to North Lake Floodings Wildlife Management Area",
-        "latitude": 45.375,
-        "longitude": -87.4911,
+        "latitude": 45.4044,
+        "longitude": -87.4618,
         "locationDesc": "US-MI"
     },
     {
@@ -1717,15 +1836,15 @@
     {
         "reference": "US-6704",
         "name": "Hillcrest State Game Land",
-        "latitude": 42.5853,
-        "longitude": -83.9944,
+        "latitude": 42.5852,
+        "longitude": -83.9958,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6705",
-        "name": "Holly Wildlife State Recreation Area",
-        "latitude": 42.8353,
-        "longitude": -83.5167,
+        "name": "Holly Wildlife Unit of Holly State Recreation Area",
+        "latitude": 42.8665,
+        "longitude": -83.5424,
         "locationDesc": "US-MI"
     },
     {
@@ -1738,29 +1857,29 @@
     {
         "reference": "US-6707",
         "name": "Houghton Lake Flats North Flooding Wildlife Management Area",
-        "latitude": 44.3839,
-        "longitude": -84.8164,
+        "latitude": 44.3939,
+        "longitude": -84.7971,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6708",
         "name": "Houghton Lake Flats South Flooding Wildlife Management Area",
-        "latitude": 44.3628,
-        "longitude": -84.8164,
+        "latitude": 44.3633,
+        "longitude": -84.7997,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6709",
         "name": "Houghton Lake Wildlife Management Area",
-        "latitude": 44.3,
-        "longitude": -84.8619,
+        "latitude": 44.2936,
+        "longitude": -84.8921,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6710",
         "name": "Hubbard Lake State Game Land",
-        "latitude": 44.76,
-        "longitude": -83.57,
+        "latitude": 44.7586,
+        "longitude": -83.5683,
         "locationDesc": "US-MI"
     },
     {
@@ -1773,22 +1892,22 @@
     {
         "reference": "US-6712",
         "name": "Keeler State Game Land",
-        "latitude": 42.1164,
-        "longitude": -86.2142,
+        "latitude": 42.1569,
+        "longitude": -86.1742,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6713",
         "name": "Kinney Waterfowl National Wildlife Management Area",
-        "latitude": 42.1022,
-        "longitude": -85.8231,
+        "latitude": 42.1088,
+        "longitude": -85.8316,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6715",
         "name": "Lake Interstate State Game Land",
-        "latitude": 42.6633,
-        "longitude": -84.6867,
+        "latitude": 42.6616,
+        "longitude": -84.6858,
         "locationDesc": "US-MI"
     },
     {
@@ -1801,15 +1920,15 @@
     {
         "reference": "US-6717",
         "name": "Lame Duck Area State Game Land",
-        "latitude": 44.0808,
-        "longitude": -84.2192,
+        "latitude": 44.0974,
+        "longitude": -84.237,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6718",
         "name": "Langston State Game Land",
-        "latitude": 43.3225,
-        "longitude": -85.2747,
+        "latitude": 43.3227,
+        "longitude": -85.2506,
         "locationDesc": "US-MI"
     },
     {
@@ -1822,8 +1941,8 @@
     {
         "reference": "US-6720",
         "name": "Lee Grande Ranch State Game Land",
-        "latitude": 45.4253,
-        "longitude": -84.4128,
+        "latitude": 45.4202,
+        "longitude": -84.4469,
         "locationDesc": "US-MI"
     },
     {
@@ -1836,8 +1955,8 @@
     {
         "reference": "US-6722",
         "name": "Little Betsie State Game Land",
-        "latitude": 44.5456,
-        "longitude": -85.8942,
+        "latitude": 44.5559,
+        "longitude": -85.8978,
         "locationDesc": "US-MI"
     },
     {
@@ -1871,8 +1990,8 @@
     {
         "reference": "US-6727",
         "name": "Manistee River State Game Land",
-        "latitude": 44.255,
-        "longitude": -86.2448,
+        "latitude": 44.2807,
+        "longitude": -86.1953,
         "locationDesc": "US-MI"
     },
     {
@@ -1934,15 +2053,15 @@
     {
         "reference": "US-6736",
         "name": "Minden City State Game Land",
-        "latitude": 43.6178,
-        "longitude": -82.9605,
+        "latitude": 43.6128,
+        "longitude": -82.9168,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6737",
         "name": "Molasses River Flooding No 1 Wildlife Management Area",
-        "latitude": 44.0939,
-        "longitude": -84.2105,
+        "latitude": 44.0976,
+        "longitude": -84.2126,
         "locationDesc": "US-MI"
     },
     {
@@ -1969,8 +2088,8 @@
     {
         "reference": "US-6741",
         "name": "Muskegon State Game Land",
-        "latitude": 43.2847,
-        "longitude": -86.0964,
+        "latitude": 43.2929,
+        "longitude": -86.0522,
         "locationDesc": "US-MI"
     },
     {
@@ -2004,8 +2123,8 @@
     {
         "reference": "US-6747",
         "name": "Old Fur Farm Flooding Wildlife Management Area",
-        "latitude": 44.1031,
-        "longitude": -84.9175,
+        "latitude": 44.1037,
+        "longitude": -84.9226,
         "locationDesc": "US-MI"
     },
     {
@@ -2018,8 +2137,8 @@
     {
         "reference": "US-6749",
         "name": "Oliver Township State Game Land",
-        "latitude": 43.8192,
-        "longitude": -83.1225,
+        "latitude": 43.8184,
+        "longitude": -83.1212,
         "locationDesc": "US-MI"
     },
     {
@@ -2039,22 +2158,22 @@
     {
         "reference": "US-6752",
         "name": "Osceola-Missaukee Grasslands State Game Land",
-        "latitude": 44.1522,
-        "longitude": -85.1364,
+        "latitude": 44.1528,
+        "longitude": -85.1473,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6753",
         "name": "Pentwater River State Game Land",
-        "latitude": 43.7436,
-        "longitude": -86.4228,
+        "latitude": 43.7629,
+        "longitude": -86.3944,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6754",
         "name": "Pere Marquette State Game Land",
-        "latitude": 43.9305,
-        "longitude": -86.4172,
+        "latitude": 43.9358,
+        "longitude": -86.4164,
         "locationDesc": "US-MI"
     },
     {
@@ -2074,8 +2193,8 @@
     {
         "reference": "US-6757",
         "name": "Petobego State Game Land",
-        "latitude": 44.8536,
-        "longitude": -85.4333,
+        "latitude": 44.8543,
+        "longitude": -85.4326,
         "locationDesc": "US-MI"
     },
     {
@@ -2095,22 +2214,22 @@
     {
         "reference": "US-6760",
         "name": "Pointe Aux Peaux State Wildlife Area",
-        "latitude": 41.9472,
-        "longitude": -83.2711,
+        "latitude": 41.9496,
+        "longitude": -83.2707,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6761",
         "name": "Pointe Mouillee State Game Land",
-        "latitude": 42.0278,
-        "longitude": -83.2064,
+        "latitude": 42.0385,
+        "longitude": -83.1992,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6762",
         "name": "Port Huron State Game Land",
-        "latitude": 43.0525,
-        "longitude": -82.5928,
+        "latitude": 43.126,
+        "longitude": -82.6208,
         "locationDesc": "US-MI"
     },
     {
@@ -2138,7 +2257,7 @@
         "reference": "US-6766",
         "name": "Quanicassee State Wildlife Area",
         "latitude": 43.6019,
-        "longitude": -83.7194,
+        "longitude": -83.7199,
         "locationDesc": "US-MI"
     },
     {
@@ -2151,8 +2270,8 @@
     {
         "reference": "US-6768",
         "name": "Ralph State Game Land",
-        "latitude": 46.1125,
-        "longitude": -87.8425,
+        "latitude": 46.1108,
+        "longitude": -87.8418,
         "locationDesc": "US-MI"
     },
     {
@@ -2165,15 +2284,15 @@
     {
         "reference": "US-6770",
         "name": "Rogue River State Game Land",
-        "latitude": 43.2633,
-        "longitude": -85.6756,
+        "latitude": 43.2594,
+        "longitude": -85.6746,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6771",
         "name": "Rose Lake State Game Land",
-        "latitude": 42.8064,
-        "longitude": -84.3747,
+        "latitude": 42.8067,
+        "longitude": -84.3737,
         "locationDesc": "US-MI"
     },
     {
@@ -2193,8 +2312,8 @@
     {
         "reference": "US-6774",
         "name": "Salt River Marsh State Wildlife Area",
-        "latitude": 42.6617,
-        "longitude": -82.7792,
+        "latitude": 42.6663,
+        "longitude": -82.777,
         "locationDesc": "US-MI"
     },
     {
@@ -2221,8 +2340,8 @@
     {
         "reference": "US-6778",
         "name": "Saranac-Lowell State Game Land",
-        "latitude": 42.9517,
-        "longitude": -85.3108,
+        "latitude": 42.9661,
+        "longitude": -85.3184,
         "locationDesc": "US-MI"
     },
     {
@@ -2242,15 +2361,15 @@
     {
         "reference": "US-6781",
         "name": "Sharonville State Game Land",
-        "latitude": 42.1819,
-        "longitude": -84.1622,
+        "latitude": 42.2051,
+        "longitude": -84.1572,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6782",
         "name": "Shiawassee River State Game Land",
-        "latitude": 43.3172,
-        "longitude": -84.1022,
+        "latitude": 43.3439,
+        "longitude": -84.1133,
         "locationDesc": "US-MI"
     },
     {
@@ -2270,15 +2389,15 @@
     {
         "reference": "US-6785",
         "name": "Sportsmans Lake/Pond Wildlife Management Area",
-        "latitude": 45.0472,
-        "longitude": -84.1192,
+        "latitude": 45.0458,
+        "longitude": -84.1156,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6787",
         "name": "St. Clair Flats State Wildlife Area",
-        "latitude": 42.6067,
-        "longitude": -82.635,
+        "latitude": 42.6725,
+        "longitude": -82.6169,
         "locationDesc": "US-MI"
     },
     {
@@ -2291,8 +2410,8 @@
     {
         "reference": "US-6789",
         "name": "St. John's Marsh State Wildlife Area",
-        "latitude": 42.6442,
-        "longitude": -82.6094,
+        "latitude": 42.6627,
+        "longitude": -82.5922,
         "locationDesc": "US-MI"
     },
     {
@@ -2319,29 +2438,29 @@
     {
         "reference": "US-6793",
         "name": "Sturgeon River Sloughs Wildlife Management Area",
-        "latitude": 46.9314,
-        "longitude": -88.4875,
+        "latitude": 47.0081,
+        "longitude": -88.4899,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6794",
         "name": "Tamarack Lake (Sunfield Township) State Game Land",
-        "latitude": 42.7229,
-        "longitude": -85.0525,
+        "latitude": 42.7271,
+        "longitude": -85.0538,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6795",
         "name": "Three Rivers State Game Land",
-        "latitude": 41.8694,
-        "longitude": -85.7444,
+        "latitude": 41.8867,
+        "longitude": -85.7412,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6796",
-        "name": "Tobico Marsh State Recreation Area",
-        "latitude": 43.6911,
-        "longitude": -83.9286,
+        "name": "Tobico Marsh Wildlife Management Area",
+        "latitude": 43.6958,
+        "longitude": -83.9489,
         "locationDesc": "US-MI"
     },
     {
@@ -2354,43 +2473,43 @@
     {
         "reference": "US-6798",
         "name": "Townline Creek Flooding Wildlife Management Area",
-        "latitude": 44.1656,
-        "longitude": -84.7461,
+        "latitude": 44.1618,
+        "longitude": -84.7706,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6799",
         "name": "Tuscola State Game Land",
-        "latitude": 43.4367,
-        "longitude": -83.3728,
+        "latitude": 43.4239,
+        "longitude": -83.3735,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6800",
         "name": "Unadilla State Wildlife Area",
-        "latitude": 42.4364,
-        "longitude": -84.1119,
+        "latitude": 42.4362,
+        "longitude": -84.1121,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6801",
         "name": "Vassar State Game Land",
-        "latitude": 43.4108,
-        "longitude": -83.4922,
+        "latitude": 43.4184,
+        "longitude": -83.4637,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6802",
         "name": "Verona State Game Land",
-        "latitude": 43.7836,
-        "longitude": -82.8814,
+        "latitude": 43.7848,
+        "longitude": -82.8812,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6803",
         "name": "Vestaburg State Game Land",
-        "latitude": 43.3799,
-        "longitude": -84.9414,
+        "latitude": 43.35,
+        "longitude": -84.8511,
         "locationDesc": "US-MI"
     },
     {
@@ -2403,15 +2522,15 @@
     {
         "reference": "US-6806",
         "name": "Wigwam Bay State Wildlife Area",
-        "latitude": 43.9944,
-        "longitude": -83.7775,
+        "latitude": 44.0003,
+        "longitude": -83.7853,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-6807",
         "name": "Wildfowl Bay State Wildlife Area",
-        "latitude": 43.8289,
-        "longitude": -83.4342,
+        "latitude": 43.8284,
+        "longitude": -83.3918,
         "locationDesc": "US-MI"
     },
     {
@@ -2578,15 +2697,15 @@
     {
         "reference": "US-7855",
         "name": "Molasses River Flooding No 3 Wildlife Management Area",
-        "latitude": 43.9494,
-        "longitude": -84.1928,
+        "latitude": 43.9489,
+        "longitude": -84.1931,
         "locationDesc": "US-MI"
     },
     {
         "reference": "US-7856",
         "name": "Molasses River Flooding No 5 Wildlife Management Area",
-        "latitude": 43.9861,
-        "longitude": -84.1856,
+        "latitude": 43.987,
+        "longitude": -84.2051,
         "locationDesc": "US-MI"
     },
     {

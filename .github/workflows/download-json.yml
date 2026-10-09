@@ -21,7 +21,9 @@ jobs:
           # Download to a temp file and only replace the committed copy once
           # it parses as JSON, so a bucket error page can never overwrite
           # good data that the dashboard is serving.
-          for name in pota_activations Michigan_POTA_Parks; do
+          # Michigan_POTA_Parks.json is built from the POTA park list below,
+          # not from the bucket, whose copy stopped updating in Dec 2025.
+          for name in pota_activations; do
             curl -sSL --fail --retry 3 --retry-delay 5 \
               "https://storage.googleapis.com/pota-activations0/${name}.json" \
               -o "/tmp/${name}.json"
@@ -43,6 +45,12 @@ jobs:
         # checks, and a failure here never blocks the commit below.
         continue-on-error: true
         run: python3 scripts/build_us_ca_parks.py
+
+      - name: Build Michigan parks
+        # Active parks in US-MI from data/us_ca_parks.json, in the format the
+        # dashboard reads. Keeps the committed file if the result looks short.
+        continue-on-error: true
+        run: python3 scripts/build_michigan_parks.py
 
       - name: Commit and Push changes
         run: |
