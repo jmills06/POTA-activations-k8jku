@@ -376,6 +376,14 @@
         "parktypeDesc": "State Park"
     },
     {
+        "reference": "US-2701",
+        "name": "Hyde Memorial",
+        "latitude": 35.7304,
+        "longitude": -105.837,
+        "locationDesc": "US-NM",
+        "parktypeDesc": "State Park"
+    },
+    {
         "reference": "US-3305",
         "name": "Bay City",
         "latitude": 43.6673,

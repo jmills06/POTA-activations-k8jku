@@ -2758,5 +2758,15 @@
         "data": 0,
         "phone": 28,
         "total": 28
+    },
+    {
+        "date": "2026-10-09",
+        "reference": "US-2701",
+        "park": "Hyde Memorial State Park",
+        "location": "US-NM",
+        "cw": 0,
+        "data": 0,
+        "phone": 14,
+        "total": 14
     }
 ]

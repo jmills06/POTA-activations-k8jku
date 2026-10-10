@@ -11477,6 +11477,7 @@
 {"reference": "US-13593", "name": "Boulders OHV Staging Area BLM Recreation Management Area", "latitude": 33.8443, "longitude": -112.442, "grid": "DM33su", "locationDesc": "US-AZ", "active": true},
 {"reference": "US-13594", "name": "Black Canyon National Recreation Trail", "latitude": 33.9846, "longitude": -112.169, "grid": "DM33vx", "locationDesc": "US-AZ", "active": true},
 {"reference": "US-13595", "name": "Northern Recreational State Trail", "latitude": 43.4364, "longitude": -71.8555, "grid": "FN43bk", "locationDesc": "US-NH", "active": true},
+{"reference": "US-13596", "name": "Butch Cassidy State Monument Park", "latitude": 38.1446, "longitude": -112.304, "grid": "DM38ud", "locationDesc": "US-UT", "active": true},
 {"reference": "US-1360", "name": "Hillman State Park", "latitude": 40.4548, "longitude": -80.4177, "grid": "EN90sk", "locationDesc": "US-PA", "active": true},
 {"reference": "US-1361", "name": "Hills Creek State Park", "latitude": 41.8077, "longitude": -77.1968, "grid": "FN11jt", "locationDesc": "US-PA", "active": true},
 {"reference": "US-1362", "name": "Hyner Run State Park", "latitude": 41.3602, "longitude": -77.6256, "grid": "FN11ei", "locationDesc": "US-PA", "active": true},
