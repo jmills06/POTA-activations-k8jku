@@ -18579,7 +18579,7 @@
 {"reference": "US-8494", "name": "Jonesboro Wildlife Management Area", "latitude": 44.7004, "longitude": -67.526, "grid": "FN64fq", "locationDesc": "US-ME", "active": true},
 {"reference": "US-8495", "name": "Narraguagus Wildlife Management Area", "latitude": 44.6534, "longitude": -67.9502, "grid": "FN64ap", "locationDesc": "US-ME", "active": true},
 {"reference": "US-8496", "name": "Orange River Wildlife Management Area", "latitude": 44.7758, "longitude": -67.2253, "grid": "FN64js", "locationDesc": "US-ME", "active": true},
-{"reference": "US-8497", "name": "Pennamaquan Wildlife Management Area", "latitude": 44.9963, "longitude": -67.2105, "grid": "FN64jx", "locationDesc": "US-ME", "active": true},
+{"reference": "US-8497", "name": "Pennamaquan Wildlife Management Area", "latitude": 44.9852, "longitude": -67.1979, "grid": "FN64jx", "locationDesc": "US-ME", "active": true},
 {"reference": "US-8498", "name": "Egypt Bay Wildlife Management Area", "latitude": 44.5593, "longitude": -68.2914, "grid": "FN54un", "locationDesc": "US-ME", "active": true},
 {"reference": "US-8499", "name": "Pleasant Bay Wildlife Management Area", "latitude": 44.5487, "longitude": -67.743, "grid": "FN64dn", "locationDesc": "US-ME", "active": true},
 {"reference": "US-8500", "name": "Lyle Frost (Scammon Marsh) Wildlife Management Area", "latitude": 44.6598, "longitude": -68.2239, "grid": "FN54vp", "locationDesc": "US-ME", "active": true},
