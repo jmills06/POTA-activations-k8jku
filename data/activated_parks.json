@@ -552,6 +552,14 @@
         "parktypeDesc": "National Forest"
     },
     {
+        "reference": "US-4553",
+        "name": "Rio Grande del Norte",
+        "latitude": 36.7663,
+        "longitude": -105.641,
+        "locationDesc": "US-NM",
+        "parktypeDesc": "National Monument"
+    },
+    {
         "reference": "US-4559",
         "name": "Florida Trail",
         "latitude": 28.2875,
