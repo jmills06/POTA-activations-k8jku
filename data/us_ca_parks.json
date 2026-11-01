@@ -7218,7 +7218,7 @@
 {"reference": "US-0651", "name": "Point Reyes National Seashore", "latitude": 38.1109, "longitude": -122.869, "grid": "CM88nc", "locationDesc": "US-CA", "active": true},
 {"reference": "US-0652", "name": "Curecanti National Recreation Area", "latitude": 38.4885, "longitude": -107.274, "grid": "DM68il", "locationDesc": "US-CO", "active": true},
 {"reference": "US-0653", "name": "Constitution Gardens National Park", "latitude": 38.8904, "longitude": -77.0436, "grid": "FM18lv", "locationDesc": "US-DC", "active": true},
-{"reference": "US-0654", "name": "National Capital Parks Park", "latitude": 38.8746, "longitude": -76.9795, "grid": "FM18mu", "locationDesc": "US-DC,US-MD", "active": true},
+{"reference": "US-0654", "name": "National Capital Parks - East Park", "latitude": 38.8746, "longitude": -76.9795, "grid": "FM18mu", "locationDesc": "US-DC,US-MD", "active": true},
 {"reference": "US-0655", "name": "National Mall and Memorial Parks National Park", "latitude": 38.8897, "longitude": -77.0282, "grid": "FM18lv", "locationDesc": "US-DC", "active": true},
 {"reference": "US-0656", "name": "Rock Creek Park", "latitude": 38.9596, "longitude": -77.0531, "grid": "FM18lx", "locationDesc": "US-DC", "active": true},
 {"reference": "US-0657", "name": "President's Park (White House) Park", "latitude": 38.8948, "longitude": -77.035, "grid": "FM18lv", "locationDesc": "US-DC", "active": true},
