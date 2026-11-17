@@ -6619,7 +6619,7 @@
 {"reference": "CA-6618", "name": "O'Hara Mill Homestead Conservation Area", "latitude": 44.5164, "longitude": -77.5267, "grid": "FN14fm", "locationDesc": "CA-ON", "active": true},
 {"reference": "CA-6619", "name": "Depot Lakes Conservation Area", "latitude": 44.5435, "longitude": -76.7711, "grid": "FN14on", "locationDesc": "CA-ON", "active": true},
 {"reference": "CA-6620", "name": "Deerock Lake Conservation Area", "latitude": 44.7335, "longitude": -77.2319, "grid": "FN14jr", "locationDesc": "CA-ON", "active": true},
-{"reference": "CA-6621", "name": "Potter's Creek Conservation Area", "latitude": 44.1443, "longitude": -77.4339, "grid": "FN14gd", "locationDesc": "CA-ON", "active": true},
+{"reference": "CA-6621", "name": "Potter's Creek Conservation Area", "latitude": 44.1443, "longitude": -77.4339, "grid": "FN14gd", "locationDesc": "CA-ON", "active": false},
 {"reference": "CA-6622", "name": "Sheffield Conservation Area", "latitude": 44.5611, "longitude": -77.1169, "grid": "FN14kn", "locationDesc": "CA-ON", "active": true},
 {"reference": "CA-6623", "name": "Sidney Conservation Area", "latitude": 44.2493, "longitude": -77.5184, "grid": "FN14ff", "locationDesc": "CA-ON", "active": true},
 {"reference": "CA-6624", "name": "Vanderwater Conservation Area", "latitude": 44.3756, "longitude": -77.3078, "grid": "FN14ij", "locationDesc": "CA-ON", "active": true},
